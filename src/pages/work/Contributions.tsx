@@ -1,7 +1,13 @@
+import { useOutletContext } from "react-router-dom";
+import type { Lang } from "@/layouts/MainLayout";
+import ContributionsSection from "@/pages/home/sections/contributions/ContributionsSection";
+
 const Contributions = () => {
+  const { lang } = useOutletContext<{ lang: Lang }>();
+
   return (
-    <div className="pt-28 px-6">
-      <h1 className="text-3xl font-bold">Contributions</h1>
+    <div className="pt-28">
+      <ContributionsSection lang={lang} />
     </div>
   );
 };

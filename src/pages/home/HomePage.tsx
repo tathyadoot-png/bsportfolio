@@ -8,6 +8,8 @@ import JourneySection from "./sections/journey/JourneySection";
 import AchievementsSection from "./sections/achievements/AchievementsSection";
 import GallerySection from "./sections/gallery/GallerySection";
 import ContactSection from "./sections/contact/ContactSection";
+import GovernmentWorkSection from "./sections/government/GovernmentWorkSection";
+import SocialWorkSection from "./sections/social/SocialWorkSection";
 
 const HomePage = () => {
   const { lang } = useOutletContext<{ lang: Lang }>();
@@ -21,7 +23,7 @@ const HomePage = () => {
 
       {/* 👤 ABOUT (SHORT PREVIEW) */}
       <section>
-        <AboutSection lang={lang} preview />
+        <AboutSection   />
       </section>
 
       {/* 🧭 JOURNEY (SHORT TIMELINE) */}
@@ -33,10 +35,16 @@ const HomePage = () => {
       <section>
         <AchievementsSection lang={lang} preview />
       </section>
+      <section>
+       <GovernmentWorkSection lang={lang} preview />
+      </section>
+      <section>
+      <SocialWorkSection lang={lang} preview />
+      </section>
 
       {/* 🖼 GALLERY PREVIEW */}
       <section>
-        <GallerySection preview />
+        <GallerySection  />
       </section>
 
       {/* 📞 CONTACT */}

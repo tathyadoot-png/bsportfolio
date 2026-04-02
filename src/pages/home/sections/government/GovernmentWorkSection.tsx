@@ -1,16 +1,16 @@
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { Briefcase } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import { contributionsData } from "@/data/contributionsData";
+import { governmentWorkData } from "@/data/governmentWorkData";
 
 interface Props {
   lang: "hi" | "en";
   preview?: boolean;
 }
 
-const ContributionsSection = ({ lang, preview = false }: Props) => {
-  const rawData = contributionsData[lang] || [];
+const GovernmentWorkSection = ({ lang, preview = false }: Props) => {
+  const rawData = governmentWorkData[lang] || [];
   const data = preview ? rawData.slice(0, 3) : rawData;
 
   return (
@@ -19,12 +19,12 @@ const ContributionsSection = ({ lang, preview = false }: Props) => {
       {/* 🔥 HEADING */}
       <div className="mb-10">
         <h2 className="text-2xl md:text-3xl font-extrabold text-primary">
-          {lang === "hi" ? "प्रमुख योगदान" : "Key Contributions"}
+          {lang === "hi" ? "सरकारी कार्य" : "Government Work"}
         </h2>
         <p className="text-gray-500 text-sm mt-1">
           {lang === "hi"
-            ? "राज्य और समाज के लिए महत्वपूर्ण योगदान"
-            : "Major contributions for state and society"}
+            ? "विकास और जनसेवा के प्रमुख कार्य"
+            : "Major works and contributions for public development"}
         </p>
       </div>
 
@@ -42,7 +42,7 @@ const ContributionsSection = ({ lang, preview = false }: Props) => {
           >
             {/* ICON */}
             <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-green/10 text-green mb-4 group-hover:scale-110 transition">
-              <Star size={24} />
+              <Briefcase size={24} />
             </div>
 
             {/* TITLE */}
@@ -63,12 +63,12 @@ const ContributionsSection = ({ lang, preview = false }: Props) => {
       {preview && (
         <div className="mt-10 text-center">
           <Link
-            to="/contributions"
+            to="/government-work"
             className="text-green font-bold text-sm hover:underline"
           >
             {lang === "hi"
-              ? "सभी योगदान देखें →"
-              : "View All Contributions →"}
+              ? "सभी कार्य देखें →"
+              : "View All Work →"}
           </Link>
         </div>
       )}
@@ -76,4 +76,4 @@ const ContributionsSection = ({ lang, preview = false }: Props) => {
   );
 };
 
-export default ContributionsSection;
+export default GovernmentWorkSection;

@@ -1,7 +1,13 @@
+import { useOutletContext } from "react-router-dom";
+import type { Lang } from "@/layouts/MainLayout";
+import GovernmentWorkSection from "@/pages/home/sections/government/GovernmentWorkSection";
+
 const GovernmentWork = () => {
+  const { lang } = useOutletContext<{ lang: Lang }>();
+
   return (
-    <div className="pt-28 px-6">
-      <h1 className="text-3xl font-bold">Government Work</h1>
+    <div className="pt-28">
+      <GovernmentWorkSection lang={lang} />
     </div>
   );
 };
