@@ -1,7 +1,13 @@
+import { useOutletContext } from "react-router-dom";
+import type { Lang } from "@/layouts/MainLayout";
+import VivahSection from "@/pages/home/sections/social/VivahSection";
+
 const Vivah = () => {
+  const { lang } = useOutletContext<{ lang: Lang }>();
+
   return (
-    <div className="pt-28 px-6">
-      <h1 className="text-3xl font-bold">Mass Marriage</h1>
+    <div className="pt-28">
+      <VivahSection lang={lang} />
     </div>
   );
 };

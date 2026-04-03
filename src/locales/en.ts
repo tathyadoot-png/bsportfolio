@@ -2,6 +2,7 @@ const en = {
   nav: {
     home: "Home",
     about: "About",
+inspiration: "Inspiration",
     journey: "Political Journey",
     work: "Work & Achievements",
     social: "Social Work",

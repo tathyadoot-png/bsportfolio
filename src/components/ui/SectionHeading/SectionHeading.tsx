@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
+// @ts-ignore (ScrolLTrigger import issue fix)
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -8,28 +9,41 @@ gsap.registerPlugin(ScrollTrigger);
 interface SectionHeadingProps {
   title: string;
   subtitle?: string;
+  lang?: "hi" | "en";
 }
 
-const SectionHeading = ({ title, subtitle }: SectionHeadingProps) => {
+const SectionHeading = ({ title, subtitle, lang = "en" }: SectionHeadingProps) => {
   const containerRef = useRef(null);
+  const isHi = lang === "hi";
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
+      // 1. Line Connector Reveal
       gsap.from(".connector-line", {
         width: 0,
         opacity: 0,
         duration: 1.5,
         ease: "expo.out",
-        scrollTrigger: { trigger: containerRef.current, start: "top 90%" },
+        scrollTrigger: { trigger: containerRef.current, start: "top 95%" },
       });
 
-      gsap.from(".reveal-up", {
-        y: 60,
-        opacity: 0,
-        stagger: 0.2,
+      // 2. Character Reveal Effect for Title
+      gsap.from(".title-reveal", {
+        y: "110%",
+        stagger: 0.1,
         duration: 1.2,
-        ease: "power4.out",
-        scrollTrigger: { trigger: containerRef.current, start: "top 90%" },
+        ease: "expo.out",
+        scrollTrigger: { trigger: containerRef.current, start: "top 95%" },
+      });
+
+      // 3. Staggered reveal for subtitle and tag
+      gsap.from(".fade-right", {
+        x: -20,
+        opacity: 0,
+        stagger: 0.15,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: { trigger: containerRef.current, start: "top 95%" },
       });
     }, containerRef);
     return () => ctx.revert();
@@ -38,51 +52,47 @@ const SectionHeading = ({ title, subtitle }: SectionHeadingProps) => {
   return (
     <div
       ref={containerRef}
-      className="relative w-full lg:w-[90%] mx-auto mb-12 md:mb-20 px-4 md:px-8 lg:px-12 overflow-hidden"
+      className="relative w-full lg:w-[96%] max-w-[1600px] mx-auto mb-16 md:mb-24 px-4 md:px-10 lg:px-12 overflow-hidden"
     >
-      {/* WRAPPER: Responsive gap management */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-8 lg:gap-12">
+      {/* 🔮 MODERN GRID OVERLAY (SUBTLE) */}
+      <div className="absolute inset-0 opacity-[0.03] -z-10" style={{ backgroundImage: `radial-gradient(#112250 1px, transparent 1px)`, backgroundSize: '30px 30px' }} />
+
+      {/* WRAPPER */}
+      <div className="grid grid-cols-1 md:grid-cols-12 items-end gap-6 md:gap-10">
         
-        {/* LEFT: HEADING - Adjusted md text size to prevent overflow */}
-        <div className="flex-shrink-0 md:max-w-[60%] lg:max-w-none">
-          <div className="py-2">
-            <h2 className="reveal-up py-2 font-[Gotu] text-3xl md:text-4xl lg:text-6xl font-[1000] text-[#112250] leading-[0.9] md:leading-[0.85]  uppercase">
-              {title}
-            </h2>
-          </div>
+        {/* LEFT: HEADING */}
+        <div className="md:col-span-8 overflow-hidden h-fit py-2">
+          <h2 className="title-reveal py-1 font-gotu text-4xl md:text-5xl lg:text-7xl font-extrabold text-[#112250] leading-[1] md:leading-[0.9] uppercase tracking-tighter">
+            {title}
+          </h2>
         </div>
 
-        {/* MIDDLE: DESIGNER LINE (Visible on md and up) */}
-        <div className="hidden md:block flex-grow mb-4 lg:mb-8">
-          <div className="connector-line h-[2px] w-full bg-gradient-to-r from-primary to-green" />
-        </div>
-
-        {/* RIGHT: SUBTITLE & TAG - Width adjusted for md screens */}
-        <div className="w-full md:w-auto lg:w-1/3 md:pb-3 lg:pb-6">
-          <div className="overflow-hidden">
+        {/* RIGHT: SUBTITLE & TAG */}
+        <div className="md:col-span-4 w-full flex flex-col items-start md:items-end justify-end space-y-3 pb-2 md:pb-4 text-left md:text-right">
+          <div className="overflow-hidden h-fit w-full">
             {subtitle && (
-              <p className="reveal-up font-[Poppins] py-2 text-xs md:text-sm lg:text-lg font-medium uppercase  text-green mb-2 lg:mb-4 leading-tight">
+              <p className="fade-right font-asar py-1 text-sm md:text-base lg:text-xl font-medium uppercase text-green leading-tight">
                 {subtitle}
               </p>
             )}
-            <div className="reveal-up flex items-center gap-2 lg:gap-3">
-              <span className="h-px w-6 lg:w-10 bg-[#112250]/30" />
-              <span className="text-[8px] lg:text-[10px] font-bold text-primary uppercase  whitespace-nowrap">
-                Public Leader • Vision 2026
+            <div className="fade-right flex items-center justify-start md:justify-end gap-2 lg:gap-3 w-full">
+              <span className="h-px w-6 lg:w-10 bg-[#112250]/20 hidden md:block" />
+              <span className="text-[10px] lg:text-[12px] font-bold text-primary uppercase whitespace-nowrap tracking-wider">
+                {isHi ? "जनसेवा एवं विकास का संकल्प" : "Vision • Leadership • Progress"}
               </span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* BOTTOM PROGRESS BAR */}
-      <div className="mt-6 lg:mt-10 w-full h-[1px] bg-gray-100 relative">
+      {/* BOTTOM DESIGNER LINE */}
+      <div className="mt-8 lg:mt-12 w-full h-[1px] bg-gray-100 relative">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: "30%" }}
           viewport={{ once: true }}
           transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="absolute left-0 top-0 h-full bg-[#E46B2E]"
+          className="absolute left-0 top-0 h-full bg-orange-500 rounded-full shadow-[0_0_10px_rgba(228,107,46,0.3)]"
         />
       </div>
     </div>

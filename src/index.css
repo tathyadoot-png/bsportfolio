@@ -1,76 +1,73 @@
-@import url("https://fonts.googleapis.com/css2?family=Gotu&family=Playpen+Sans+Deva:wght@100..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Asar&family=Gotu&family=Inter:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ===== POLITICAL COLOR SYSTEM ===== */
 @layer base {
   :root {
-    --color-primary: #E46B2E;      /* Kesariya */
-    --color-secondary: #112250;    /* Governance Blue */
-    --color-green: #159172;        /* Vikas Green */
+    /* Premium Palette: Saffron + Emerald Green */
+    --color-primary: #E46B2E;      /* Rich Saffron */
+    --color-secondary: #064E3B;    /* Deep Emerald Night (Titles) */
+    --color-accent: #047857;       /* Emerald Vikas Green (Actions/Stats) */
 
-    --color-text: #1E3A8A;
+    --color-text: #111827;
     --color-text-muted: #6B7280;
 
     --color-bg: #FFFFFF;
-    --color-bg-soft: #F9FAFB;
+    --color-bg-soft: #F8FAFC;
     --color-border: #E5E7EB;
   }
 
-
-  /* 🔹 Default body content font */
   body {
     @apply bg-bg text-text antialiased;
-    /* font-family: 'Poppins'; */
-    font-family: 'Poppins';
+    font-family: 'Inter', sans-serif;
   }
 
-  /* 🔹 All headings = Gotu */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: 'Gotu';
-    letter-spacing: 0.01em;
+  h1, h2, h3, h4 {
+    @apply font-heading font-extrabold tracking-tighter;
+    line-height: 1.1;
   }
 }
 
-
 @layer components {
-
-  /* 🔶 Kesariya CTA */
-  .btn-saffron {
-    @apply bg-primary text-white px-6 py-2 rounded-md
-           font-semibold tracking-wide
-           hover:brightness-110 active:scale-95
-           transition-all shadow-soft;
+  /* --- PREMIUM BUTTONS --- */
+  
+  /* Saffron Button */
+  .btn-premium-saffron {
+    @apply relative overflow-hidden bg-saffron-gradient text-white px-8 py-3 rounded-full
+           font-extrabold uppercase tracking-widest shadow-[0_10px_40px_-10px_rgba(228,107,46,0.5)]
+           transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl active:scale-95 flex items-center justify-center gap-3;
   }
 
-  /* 🔷 Governance Blue */
-  .btn-blue {
-    @apply bg-secondary text-white px-6 py-2 rounded-md
-           font-semibold
-           hover:brightness-110 active:scale-95
-           transition-all shadow-soft;
+  /* Emerald Vikas Button */
+  .btn-premium-emerald {
+    @apply relative overflow-hidden bg-emerald-gradient text-white px-8 py-3 rounded-full
+           font-extrabold uppercase tracking-widest shadow-emerald-glow
+           transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl active:scale-95 flex items-center justify-center gap-3;
   }
 
-  /* 🟢 Vikas Green */
-  .btn-green {
-    @apply bg-green text-white px-6 py-2 rounded-md
-           font-semibold
-           hover:brightness-110 active:scale-95
-           transition-all shadow-soft;
+  /* --- GLASSMORPHISM (Clean Light Theme) --- */
+  
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-lg border border-emerald-100/50 
+           shadow-[0_8px_32px_0_rgba(4,120,87,0.05)] rounded-3xl
+           transition-all duration-500 hover:border-primary/20;
   }
 
-  /* 🟢 Outline Green (Optional) */
-  .btn-green-outline {
-    @apply border border-green text-green bg-transparent
-           px-6 py-2 rounded-md font-semibold
-           hover:bg-green hover:text-white
-           transition-all;
+  /* Section Title Style */
+  .section-tag {
+    @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 font-asar text-sm uppercase tracking-widest;
   }
+}
+
+/* Scrollbar styling - Emerald Style */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-bg-soft;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-emerald-200 rounded-full hover:bg-emerald-500 transition-all;
 }

@@ -5,6 +5,7 @@ import MainLayout from "@/layouts/MainLayout";
 import HomePage from "@/pages/home/HomePage";
 import AboutPage from "@/pages/about/AboutPage";
 import JourneyPage from "@/pages/journey/JourneyPage";
+import ContactSection from "@/pages/contact/ContactPage";
 
 // Work
 import GovernmentWork from "@/pages/work/GovernmentWork";
@@ -15,7 +16,7 @@ import Contributions from "@/pages/work/Contributions";
 import BloodDonation from "@/pages/social/BloodDonation";
 import Vivah from "@/pages/social/Vivah";
 import PublicService from "@/pages/social/PublicService";
-
+import SocialWorkPage from "@/pages/social/SocialWorkPage";
 // Media
 import GalleryPage from "@/pages/media/GalleryPage";
 import NewsPage from "@/pages/media/NewsPage";
@@ -44,11 +45,11 @@ const App = () => {
           <Route path="/blood-donation" element={<BloodDonation />} />
           <Route path="/vivah" element={<Vivah />} />
           <Route path="/public-service" element={<PublicService />} />
-
+<Route path="/social-work" element={<SocialWorkPage />} />
           {/* ✅ MEDIA */}
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/news" element={<NewsPage />} />
-
+<Route path="/contact" element={<ContactSection />} />
           {/* ✅ OTHER */}
           <Route path="/family" element={<FamilyPage />} />
 

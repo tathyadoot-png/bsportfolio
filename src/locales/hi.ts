@@ -2,6 +2,7 @@ const hi = {
   nav: {
     home: "होम",
     about: "परिचय",
+inspiration: "प्रेरणा",
     journey: "राजनीतिक यात्रा",
     work: "कार्य व उपलब्धियां",
     social: "सामाजिक कार्य",

@@ -44,12 +44,12 @@ const HomePage = () => {
 
       {/* 🖼 GALLERY PREVIEW */}
       <section>
-        <GallerySection  />
+       <GallerySection lang={lang}  />
       </section>
 
       {/* 📞 CONTACT */}
       <section>
-        <ContactSection />
+        <ContactSection lang={lang} />
       </section>
     </>
   );

@@ -1,15 +1,15 @@
 import { useOutletContext } from "react-router-dom";
 import type { Lang } from "@/layouts/MainLayout";
-import GallerySection from "@/pages/home/sections/gallery/GallerySection";
+import ContactSection from "@/pages/home/sections/contact/ContactSection";
 
-const GalleryPage = () => {
+const ContactPage = () => {
   const { lang } = useOutletContext<{ lang: Lang }>();
 
   return (
     <div className="pt-28">
-      <GallerySection lang={lang} />
+      <ContactSection lang={lang} />
     </div>
   );
 };
 
-export default GalleryPage;
+export default ContactPage;
