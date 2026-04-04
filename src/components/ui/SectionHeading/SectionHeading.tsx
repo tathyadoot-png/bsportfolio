@@ -1,8 +1,9 @@
 import { useLayoutEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
-// @ts-ignore (ScrolLTrigger import issue fix)
+// @ts-ignore
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Sparkles } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,39 +11,48 @@ interface SectionHeadingProps {
   title: string;
   subtitle?: string;
   lang?: "hi" | "en";
+  titleColor?: string;
+  subtitleColor?: string;
 }
 
-const SectionHeading = ({ title, subtitle, lang = "en" }: SectionHeadingProps) => {
+const SectionHeading = ({ 
+  title, 
+  subtitle, 
+  lang = "en", 
+  titleColor = "text-[#112250]", 
+  subtitleColor = "text-emerald-600" 
+}: SectionHeadingProps) => {
   const containerRef = useRef(null);
+  const ghostRef = useRef(null);
   const isHi = lang === "hi";
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // 1. Line Connector Reveal
-      gsap.from(".connector-line", {
-        width: 0,
+      // Subtle Ghost Parallax
+      gsap.to(ghostRef.current, {
+        x: -40,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+
+      // Title Reveal
+      gsap.from(".title-main", {
+        y: 30,
         opacity: 0,
-        duration: 1.5,
-        ease: "expo.out",
+        duration: 0.8,
+        ease: "power3.out",
         scrollTrigger: { trigger: containerRef.current, start: "top 95%" },
       });
 
-      // 2. Character Reveal Effect for Title
-      gsap.from(".title-reveal", {
-        y: "110%",
-        stagger: 0.1,
-        duration: 1.2,
-        ease: "expo.out",
-        scrollTrigger: { trigger: containerRef.current, start: "top 95%" },
-      });
-
-      // 3. Staggered reveal for subtitle and tag
-      gsap.from(".fade-right", {
-        x: -20,
-        opacity: 0,
-        stagger: 0.15,
+      // Line Expansion
+      gsap.from(".center-line", {
+        scaleX: 0,
         duration: 1,
-        ease: "power2.out",
+        ease: "expo.inOut",
         scrollTrigger: { trigger: containerRef.current, start: "top 95%" },
       });
     }, containerRef);
@@ -52,49 +62,55 @@ const SectionHeading = ({ title, subtitle, lang = "en" }: SectionHeadingProps) =
   return (
     <div
       ref={containerRef}
-      className="relative w-full lg:w-[96%] max-w-[1600px] mx-auto mb-16 md:mb-24 px-4 md:px-10 lg:px-12 overflow-hidden"
+      className="relative w-full max-w-[1400px] mx-auto mb-6 md:mb-10 px-4 overflow-hidden flex flex-col items-center text-center pt-0 pb-2"
     >
-      {/* 🔮 MODERN GRID OVERLAY (SUBTLE) */}
-      <div className="absolute inset-0 opacity-[0.03] -z-10" style={{ backgroundImage: `radial-gradient(#112250 1px, transparent 1px)`, backgroundSize: '30px 30px' }} />
-
-      {/* WRAPPER */}
-      <div className="grid grid-cols-1 md:grid-cols-12 items-end gap-6 md:gap-10">
-        
-        {/* LEFT: HEADING */}
-        <div className="md:col-span-8 overflow-hidden h-fit py-2">
-          <h2 className="title-reveal py-1 font-gotu text-4xl md:text-5xl lg:text-7xl font-extrabold text-[#112250] leading-[1] md:leading-[0.9] uppercase tracking-tighter">
-            {title}
-          </h2>
-        </div>
-
-        {/* RIGHT: SUBTITLE & TAG */}
-        <div className="md:col-span-4 w-full flex flex-col items-start md:items-end justify-end space-y-3 pb-2 md:pb-4 text-left md:text-right">
-          <div className="overflow-hidden h-fit w-full">
-            {subtitle && (
-              <p className="fade-right font-asar py-1 text-sm md:text-base lg:text-xl font-medium uppercase text-green leading-tight">
-                {subtitle}
-              </p>
-            )}
-            <div className="fade-right flex items-center justify-start md:justify-end gap-2 lg:gap-3 w-full">
-              <span className="h-px w-6 lg:w-10 bg-[#112250]/20 hidden md:block" />
-              <span className="text-[10px] lg:text-[12px] font-bold text-primary uppercase whitespace-nowrap tracking-wider">
-                {isHi ? "जनसेवा एवं विकास का संकल्प" : "Vision • Leadership • Progress"}
-              </span>
-            </div>
-          </div>
-        </div>
+      {/* 👻 GHOST TEXT (Positioned tightly) */}
+      <div 
+        ref={ghostRef}
+        className="absolute top-1/2 left-1/2 -translate-y-1/2 whitespace-nowrap pointer-events-none opacity-[0.02] z-0 select-none hidden lg:block"
+      >
+        <span className={`text-[8rem] font-black uppercase italic ${titleColor}`} style={{ WebkitTextStroke: '1px currentColor', color: 'transparent' }}>
+          {title}
+        </span>
       </div>
 
-      {/* BOTTOM DESIGNER LINE */}
-      <div className="mt-8 lg:mt-12 w-full h-[1px] bg-gray-100 relative">
-        <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: "30%" }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="absolute left-0 top-0 h-full bg-orange-500 rounded-full shadow-[0_0_10px_rgba(228,107,46,0.3)]"
-        />
+      {/* ✨ TOP ANCHOR (Reduced Margin) */}
+      <motion.div 
+        animate={{ rotate: 360 }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+        className="mb-2 p-1.5 rounded-full bg-orange-500/10 text-orange-500 z-10"
+      >
+        <Sparkles size={14} />
+      </motion.div>
+
+      {/* 📝 SUBTITLE (Very Compact) */}
+      {subtitle && (
+        <p className={`font-asar text-[10px] md:text-xs lg:text-sm font-bold uppercase ${subtitleColor} tracking-[0.4em] mb-1 z-10 opacity-80`}>
+          {subtitle}
+        </p>
+      )}
+
+      {/* 🏆 MAIN TITLE (Sized for Elegance) */}
+      <div className="relative z-10">
+        <h2 className={`title-main font-gotu text-3xl md:text-4xl lg:text-6xl font-black ${titleColor} leading-tight uppercase tracking-tighter`}>
+          {title}
+        </h2>
       </div>
+
+      {/* 🛰️ TAGLINE (Tightened Spacing) */}
+      <div className="mt-3 flex items-center gap-3 z-10">
+        <div className="h-[1px] w-5 bg-slate-200" />
+        <span className="text-[8px] lg:text-[9px] font-bold text-slate-400 uppercase tracking-[0.3em]">
+          {isHi ? "जनसेवा एवं विकास का संकल्प" : "Vision • Leadership • Progress"}
+        </span>
+        <div className="h-[1px] w-5 bg-slate-200" />
+      </div>
+
+      {/* 🚀 MINIMAL LINE (Very Thin & Discrete) */}
+      <div className="mt-6 w-32 h-[1px] bg-slate-100 relative overflow-hidden">
+        <div className="center-line absolute inset-0 bg-gradient-to-r from-transparent via-orange-500 to-transparent origin-center" />
+      </div>
+
     </div>
   );
 };

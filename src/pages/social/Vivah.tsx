@@ -7,7 +7,7 @@ const Vivah = () => {
 
   return (
     <div className="pt-28">
-      <VivahSection lang={lang} />
+      <VivahSection  />
     </div>
   );
 };

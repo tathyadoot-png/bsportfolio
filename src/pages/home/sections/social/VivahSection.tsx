@@ -1,87 +1,116 @@
-import { motion } from "framer-motion";
-import { Users } from "lucide-react";
 import { vivahData } from "@/data/vivahData";
+import { useOutletContext } from "react-router-dom";
+import type { Lang } from "@/layouts/MainLayout";
+import { motion } from "framer-motion";
+import { Calendar, MapPin, Heart, Image as ImageIcon } from "lucide-react";
+import SectionHeading from "@/components/ui/SectionHeading/SectionHeading";
 
-interface Props {
-  lang: "hi" | "en";
-}
-
-const VivahSection = ({ lang }: Props) => {
-  const t = vivahData[lang];
+const VivahSection = () => {
+  const { lang } = useOutletContext<{ lang: Lang }>();
+  const isHi = lang === "hi";
 
   return (
-    <div className="w-[96%] lg:w-[88%] mx-auto">
+    <section className="w-full pb-24 bg-[#fcfcfc]">
+      {/* 🏷️ Dynamic Heading */}
+      <SectionHeading 
+        title={vivahData.title[lang]} 
+        subtitle={isHi ? "कन्यादान : सबसे बड़ा दान" : "Supporting Dreams, Joining Hearts"} 
+        lang={lang}
+        titleColor="text-[#112250]"
+        subtitleColor="text-pink-600"
+      />
 
-      {/* 🔥 HEADING */}
-      <div className="mb-8">
-        <h1 className="text-3xl md:text-4xl font-extrabold text-primary">
-          {t.title}
-        </h1>
-        <p className="text-gray-500 mt-2 max-w-2xl">
-          {t.intro}
-        </p>
-      </div>
-
-      {/* 🔥 HIGHLIGHT CARD */}
-      <div className="mb-12 p-6 bg-green/10 border-l-4 border-green rounded-2xl flex items-center gap-4">
-        <div className="w-14 h-14 flex items-center justify-center rounded-full bg-green text-white">
-          <Users size={26} />
-        </div>
-
-        <div>
-          <p className="text-sm text-gray-500">
-            {lang === "hi" ? "कुल विवाह" : "Total Marriages"}
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        {/* 📊 IMPACT STATS CARD */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="mb-16 p-8 rounded-[2rem] bg-gradient-to-r from-[#112250] to-[#1a3066] text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden"
+        >
+          <div className="relative z-10">
+            <h3 className="text-3xl md:text-5xl font-black text-orange-400 mb-2">
+              {vivahData.total[lang].split(' ')[0]}
+            </h3>
+            <p className="text-white/70 uppercase tracking-[0.2em] text-xs font-bold">
+              {vivahData.total[lang].split(' ').slice(1).join(' ')}
+            </p>
+          </div>
+          <p className="md:max-w-2xl text-lg md:text-xl font-asar leading-relaxed text-white/90 italic border-l-2 border-orange-500/30 pl-6 relative z-10">
+            "{vivahData.highlight[lang]}"
           </p>
-          <p className="text-xl font-bold text-green">
-            {t.total}
-          </p>
+          {/* Background Decor */}
+          <Heart className="absolute -right-10 -bottom-10 text-white/5" size={250} />
+        </motion.div>
+
+        {/* 🗓️ EVENTS LIST */}
+        <div className="space-y-20">
+          {vivahData.events.map((event, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="group relative grid grid-cols-1 lg:grid-cols-12 gap-10 items-start"
+            >
+              {/* LEFT: INFO (4 cols) */}
+              <div className="lg:col-span-4 sticky top-32">
+                <div className="flex items-center gap-3 mb-4">
+                   <div className="px-4 py-1 rounded-full bg-pink-50 text-pink-600 text-[10px] font-black uppercase tracking-widest border border-pink-100">
+                     Official Event
+                   </div>
+                   <div className="h-px flex-grow bg-slate-100" />
+                </div>
+                <h2 className="text-3xl md:text-4xl font-gotu font-black text-[#112250] mb-6 leading-tight">
+                  {event.title[lang]}
+                </h2>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center gap-4 text-slate-500">
+                    <Calendar size={18} className="text-orange-500" />
+                    <span className="text-sm font-bold">{event.date[lang]}</span>
+                  </div>
+                  <div className="flex items-center gap-4 text-slate-500">
+                    <MapPin size={18} className="text-orange-500" />
+                    <span className="text-sm font-bold">{event.location[lang]}</span>
+                  </div>
+                </div>
+
+                <p className="text-slate-600 font-asar text-lg leading-relaxed mb-8">
+                  {event.description[lang]}
+                </p>
+              </div>
+
+              {/* RIGHT: MEDIA GRID (8 cols) */}
+              <div className="lg:col-span-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Big Cover Image */}
+                  <div className="md:col-span-2 relative h-[400px] rounded-[2rem] overflow-hidden group/img shadow-xl">
+                    <img src={event.cover} className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-110" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity" />
+                  </div>
+                  
+                  {/* Thumbnail Gallery */}
+                  {event.images.slice(1, 5).map((img, i) => (
+                    <div key={i} className="h-64 rounded-[1.5rem] overflow-hidden shadow-lg border-4 border-white">
+                      <img src={img} className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
+                    </div>
+                  ))}
+                </div>
+                
+                {/* View More Counter */}
+                <div className="mt-6 flex justify-end">
+                   <button className="flex items-center gap-2 text-[#112250] font-black text-[10px] uppercase tracking-widest hover:text-pink-600 transition-colors">
+                     <ImageIcon size={16} /> 
+                     +{event.images.length} Photos in Gallery
+                   </button>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
-
-      {/* 🔥 TIMELINE */}
-      <div className="relative border-l-2 border-green pl-6 space-y-10">
-
-        {(t.events || []).map((item, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: i * 0.1 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            {/* DOT */}
-            <div className="absolute -left-[9px] top-1 w-4 h-4 bg-green rounded-full border-4 border-white shadow" />
-
-            {/* CARD */}
-            <div className="bg-white border border-border rounded-xl p-5 shadow-sm hover:shadow-lg transition">
-              <h3 className="text-green font-bold text-sm">
-                {item.year}
-              </h3>
-              <p className="text-gray-700 text-sm mt-1 leading-relaxed">
-                {item.text}
-              </p>
-            </div>
-          </motion.div>
-        ))}
-
-      </div>
-
-      {/* 🔥 FUTURE GALLERY */}
-      <div className="mt-16">
-        <h2 className="text-xl font-bold text-primary mb-3">
-          {lang === "hi" ? "फोटो गैलरी" : "Photo Gallery"}
-        </h2>
-
-        <p className="text-gray-500 text-sm">
-          {lang === "hi"
-            ? "यहां सामूहिक विवाह कार्यक्रम की तस्वीरें दिखाई जाएंगी"
-            : "Images from mass marriage events will be displayed here"}
-        </p>
-      </div>
-
-    </div>
+    </section>
   );
 };
 
-export default VivahSection;
+export default VivahSection; // ✅ Ye default export hamesha hona chahiye
