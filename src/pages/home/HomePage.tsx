@@ -39,7 +39,7 @@ const HomePage = () => {
        <GovernmentWorkSection lang={lang} preview />
       </section>
       <section>
-      <SocialWorkSection lang={lang} preview />
+      {/* <SocialWorkSection lang={lang} preview /> */}
       </section>
 
       {/* 🖼 GALLERY PREVIEW */}

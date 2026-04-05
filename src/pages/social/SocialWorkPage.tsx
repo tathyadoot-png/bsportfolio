@@ -89,7 +89,7 @@ const SocialWorkPage = () => {
                     <p className="text-slate-500 font-asar text-lg leading-relaxed opacity-90 group-hover:opacity-100 transition-opacity">
                       {item.desc}
                     </p>
-                  </div>
+                  </div> 
 
                   {/* Footer Action */}
                   <div className="mt-10 flex items-center justify-between relative z-10">

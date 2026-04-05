@@ -85,7 +85,7 @@ const SectionHeading = ({
 
       {/* 📝 SUBTITLE (Very Compact) */}
       {subtitle && (
-        <p className={`font-asar text-[10px] md:text-xs lg:text-sm font-bold uppercase ${subtitleColor} tracking-[0.4em] mb-1 z-10 opacity-80`}>
+        <p className={`font-asar text-[10px] md:text-xs lg:text-sm font-bold uppercase ${subtitleColor}  mb-4 z-10 opacity-80`}>
           {subtitle}
         </p>
       )}
@@ -100,7 +100,7 @@ const SectionHeading = ({
       {/* 🛰️ TAGLINE (Tightened Spacing) */}
       <div className="mt-3 flex items-center gap-3 z-10">
         <div className="h-[1px] w-5 bg-slate-200" />
-        <span className="text-[8px] lg:text-[9px] font-bold text-slate-400 uppercase tracking-[0.3em]">
+        <span className="text-[8px] lg:text-[9px] font-bold text-slate-400 uppercase ">
           {isHi ? "जनसेवा एवं विकास का संकल्प" : "Vision • Leadership • Progress"}
         </span>
         <div className="h-[1px] w-5 bg-slate-200" />

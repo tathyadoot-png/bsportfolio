@@ -97,9 +97,9 @@ const HomeAbout = () => {
             <div className="space-y-2">
                <h2 className="font-gotu text-7xl md:text-9xl lg:text-[10.5rem] text-white leading-[1.1] tracking-tighter">
                  <span className="block opacity-90">{t.nameFirst}</span>
-                 <span className="block text-orange-500 italic font-black -mt-4 lg:-mt-10">
+                 <div className="block text-orange-500 italic font-black -mt-4 pt-6 ps-12 lg:mt-10">
                    {t.nameLast}
-                 </span>
+                 </div>
                </h2>
             </div>
 

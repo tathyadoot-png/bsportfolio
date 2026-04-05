@@ -42,7 +42,7 @@ const Navbar = ({ lang, setLang }: NavbarProps) => {
         { label: t.dropdown.news, path: "/news" },
       ],
     },
-    { label: t.nav.family, path: "/family" },
+    // { label: t.nav.family, path: "/family" },
   ];
 
   useEffect(() => {
