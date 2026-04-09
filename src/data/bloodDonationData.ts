@@ -1,47 +1,33 @@
-export const bloodDonationData = {
-  hi: {
-    title: "रक्तदान सेवा",
-    intro:
-      "पिछले कई वर्षों से निरंतर रक्तदान शिविर आयोजित कर हजारों लोगों की मदद की गई है।",
+export const bloodDonationData = [
+  {
+    id: 1,
 
-    total: "13112+ यूनिट रक्तदान",
+    title: {
+      hi: "रक्तदान शिविर",
+      en: "Blood Donation Camp"
+    },
 
-    events: [
-      {
-        year: "2025",
-        text: "विशाल रक्तदान शिविर का आयोजन",
-      },
-      {
-        year: "2024",
-        text: "सैकड़ों यूनिट रक्त संग्रह",
-      },
-      {
-        year: "2023",
-        text: "जनभागीदारी के साथ रक्तदान अभियान",
-      },
+    description: {
+      hi: "समाज सेवा के उद्देश्य से आयोजित रक्तदान शिविर, जिसमें बड़ी संख्या में युवाओं और नागरिकों ने भाग लेकर मानवता की सेवा की।",
+      en: "A blood donation camp organized for social welfare, where many citizens and youth participated to serve humanity."
+    },
+
+    date: "2025",
+
+    location: "Sagar, Madhya Pradesh",
+
+    coverImage:
+      "https://res.cloudinary.com/dic9hw3ie/image/upload/v1775637837/blood1_ibqrvw.jpg",
+
+    images: [
+      "https://res.cloudinary.com/dic9hw3ie/image/upload/v1775637837/blood1_ibqrvw.jpg",
+      "https://res.cloudinary.com/dic9hw3ie/image/upload/v1775637838/blood6_hka67f.jpg",
+      "https://res.cloudinary.com/dic9hw3ie/image/upload/v1775637838/blood5_a5xeo2.jpg",
+      "https://res.cloudinary.com/dic9hw3ie/image/upload/v1775637838/blood3_wa5hew.jpg",
+      "https://res.cloudinary.com/dic9hw3ie/image/upload/v1775637838/blood2_vyclme.jpg",
+      "https://res.cloudinary.com/dic9hw3ie/image/upload/v1775637837/blood4_h4ni2i.jpg"
     ],
-  },
 
-  en: {
-    title: "Blood Donation",
-    intro:
-      "Regular blood donation camps have been organized for years, helping thousands of people.",
-
-    total: "13112+ Units Donated",
-
-    events: [
-      {
-        year: "2025",
-        text: "Mega blood donation camp organized",
-      },
-      {
-        year: "2024",
-        text: "Hundreds of units collected",
-      },
-      {
-        year: "2023",
-        text: "Public participation blood drive",
-      },
-    ],
-  },
-};
+    category: "blood"
+  }
+];

@@ -9,7 +9,6 @@ import AchievementsSection from "./sections/achievements/AchievementsSection";
 import GallerySection from "./sections/gallery/GallerySection";
 import ContactSection from "./sections/contact/ContactSection";
 import GovernmentWorkSection from "./sections/government/GovernmentWorkSection";
-import SocialWorkSection from "./sections/social/SocialWorkSection";
 
 const HomePage = () => {
   const { lang } = useOutletContext<{ lang: Lang }>();

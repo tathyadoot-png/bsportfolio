@@ -51,26 +51,26 @@ export const vivahData = {
   },
 
   events: [
-    {
-      date: {
-        hi: "20 मई 2023",
-        en: "20 May 2023",
-      },
-      title: {
-        hi: "विशाल सामूहिक विवाह समारोह",
-        en: "Grand Mass Marriage Ceremony",
-      },
-      description: {
-        hi: "सागर में आयोजित इस भव्य कार्यक्रम में अनेक जोड़ों का विवाह संपन्न कराया गया।",
-        en: "A large-scale event held in Sagar where many couples were married.",
-      },
-      location: {
-        hi: "सागर, मध्य प्रदेश",
-        en: "Sagar, Madhya Pradesh",
-      },
-      cover: v1,
-      images: [v1, v2, v3, v4, v5, v6],
-    },
+    // {
+    //   date: {
+    //     hi: "20 मई 2023",
+    //     en: "20 May 2023",
+    //   },
+    //   title: {
+    //     hi: "विशाल सामूहिक विवाह समारोह",
+    //     en: "Grand Mass Marriage Ceremony",
+    //   },
+    //   description: {
+    //     hi: "सागर में आयोजित इस भव्य कार्यक्रम में अनेक जोड़ों का विवाह संपन्न कराया गया।",
+    //     en: "A large-scale event held in Sagar where many couples were married.",
+    //   },
+    //   location: {
+    //     hi: "सागर, मध्य प्रदेश",
+    //     en: "Sagar, Madhya Pradesh",
+    //   },
+    //   cover: v1,
+    //   images: [v1, v2, v3, v4, v5, v6],
+    // },
 
     {
       date: {

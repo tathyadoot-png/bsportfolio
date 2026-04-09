@@ -21,9 +21,35 @@ const GallerySection = ({ lang, preview = false }: Props) => {
     );
   });
 
-  const displayImages = preview 
-    ? filtered.flatMap((i) => i.images.map(img => ({ url: img, category: i.category, year: i.year }))).slice(0, 8)
-    : filtered.flatMap((i) => i.images.map(img => ({ url: img, category: i.category, year: i.year })));
+const displayImages = preview
+  ? filtered
+      .flatMap((i) =>
+        i.images.map((img) => {
+          const src = typeof img === "string" ? img : img.src;
+          const date = typeof img === "string" ? "" : img.date;
+
+          return {
+            url: src,
+            date,
+            category: i.category,
+            year: i.year,
+          };
+        })
+      )
+      .slice(0, 8)
+  : filtered.flatMap((i) =>
+      i.images.map((img) => {
+        const src = typeof img === "string" ? img : img.src;
+        const date = typeof img === "string" ? "" : img.date;
+
+        return {
+          url: src,
+          date,
+          category: i.category,
+          year: i.year,
+        };
+      })
+    );
 
   return (
     <section className="w-full py-16 md:py-24 bg-white overflow-hidden">
@@ -74,7 +100,8 @@ const GallerySection = ({ lang, preview = false }: Props) => {
                   { id: "all", hi: "सभी इवेंट्स", en: "All Events" },
                   { id: "blood", hi: "रक्तदान", en: "Blood Donation" },
                   { id: "political", hi: "राजनीतिक", en: "Political" },
-                  { id: "vivah", hi: "विवाह", en: "Vivah" }
+                  { id: "vivah", hi: "विवाह", en: "Vivah" },
+                  { id: "ServiceSociety", hi: "सेवा समाज", en: "Service Society" }
                 ].map((cat) => (
                   <button
                     key={cat.id}

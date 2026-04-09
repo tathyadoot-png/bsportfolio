@@ -24,7 +24,7 @@ const Navbar = ({ lang, setLang }: NavbarProps) => {
   const navItems = [
     { label: t.nav.home, path: "/" },
     { label: t.nav.about, path: "/about" },
-    { label: t.nav.inspiration, path: "/inspiration" },
+    // { label: t.nav.inspiration, path: "/inspiration" },
     { label: t.nav.journey, path: "/journey" },
     {
       label: t.nav.work,

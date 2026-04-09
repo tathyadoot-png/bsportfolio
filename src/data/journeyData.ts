@@ -21,11 +21,11 @@ export const journeyData = {
   en: [
     {
       year: "1985 - 1990",
-      text: "President, BJP Yuva Morcha (Sagar)",
+      text: "President, BJP Yuva Morcha Sagar",
     },
     {
       year: "1993 - 2024",
-      text: "Multiple term MLA (Khurai / Surkhi)",
+      text: "Multiple term MLA Khurai / Surkhi",
     },
     {
       year: "2009 - 2014",

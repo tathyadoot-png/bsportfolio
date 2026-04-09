@@ -15,7 +15,6 @@ import Contributions from "@/pages/work/Contributions";
 // Social
 import BloodDonation from "@/pages/social/BloodDonation";
 import Vivah from "@/pages/social/Vivah";
-import PublicService from "@/pages/social/PublicService";
 import SocialWorkPage from "@/pages/social/SocialWorkPage";
 // Media
 import GalleryPage from "@/pages/media/GalleryPage";
@@ -24,6 +23,9 @@ import NewsPage from "@/pages/media/NewsPage";
 // Other
 import FamilyPage from "@/pages/family/FamilyPage";
 import NotFound from "@/pages/NotFound";
+import DohelaMahotsavPage from "@/pages/social/DohelaMahotsavPage";
+import RudrakshDhamPage from "@/pages/social/RudrakshDhamPage";
+import SammanPage from "@/pages/social/SammanPage";
 
 const App = () => {
   return (
@@ -44,7 +46,6 @@ const App = () => {
           {/* ✅ SOCIAL */}
           <Route path="/blood-donation" element={<BloodDonation />} />
           <Route path="/vivah" element={<Vivah />} />
-          <Route path="/public-service" element={<PublicService />} />
 <Route path="/social-work" element={<SocialWorkPage />} />
           {/* ✅ MEDIA */}
           <Route path="/gallery" element={<GalleryPage />} />
@@ -52,6 +53,9 @@ const App = () => {
 <Route path="/contact" element={<ContactSection />} />
           {/* ✅ OTHER */}
           <Route path="/family" element={<FamilyPage />} />
+          <Route path="/dohela-mahotsav" element={<DohelaMahotsavPage />} />
+          <Route path="/rudraksh-dham" element={<RudrakshDhamPage />} />
+          <Route path="/samman-seva" element={<SammanPage />} />
 
         </Route>
 
