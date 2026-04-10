@@ -21,9 +21,24 @@ const GallerySection = ({ lang, preview = false }: Props) => {
     );
   });
 
-const displayImages = preview
-  ? filtered
-      .flatMap((i) =>
+  // ✅ SAFE displayImages (preview + full दोनों support)
+  const displayImages = (preview
+    ? filtered
+        .flatMap((i) =>
+          i.images.map((img) => {
+            const src = typeof img === "string" ? img : img.src;
+            const date = typeof img === "string" ? "" : img.date;
+
+            return {
+              url: src,
+              date,
+              category: i.category,
+              year: i.year,
+            };
+          })
+        )
+        .slice(0, 8)
+    : filtered.flatMap((i) =>
         i.images.map((img) => {
           const src = typeof img === "string" ? img : img.src;
           const date = typeof img === "string" ? "" : img.date;
@@ -36,26 +51,13 @@ const displayImages = preview
           };
         })
       )
-      .slice(0, 8)
-  : filtered.flatMap((i) =>
-      i.images.map((img) => {
-        const src = typeof img === "string" ? img : img.src;
-        const date = typeof img === "string" ? "" : img.date;
-
-        return {
-          url: src,
-          date,
-          category: i.category,
-          year: i.year,
-        };
-      })
-    );
+  );
 
   return (
     <section className="w-full py-16 md:py-24 bg-white overflow-hidden">
       <div className="w-[92%] lg:w-[90%] mx-auto">
         
-        {/* 🏷️ REUSABLE HEADING */}
+        {/* 🏷️ HEADING */}
         <div className="mb-10 md:mb-16">
           <SectionHeading 
             title={lang === "hi" ? "फोटो गैलरी" : "Visual Journey"} 
@@ -64,11 +66,10 @@ const displayImages = preview
           />
         </div>
 
-        {/* ❌ FILTERS: Ultra-Responsive Version */}
+        {/* ❌ FILTERS (only full page) */}
         {!preview && (
           <div className="flex flex-col gap-6 mb-12">
             
-            {/* Year Scroll Track */}
             <div className="flex flex-col gap-3">
               <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 flex items-center gap-2 px-1">
                 <Calendar size={12} /> {lang === "hi" ? "वर्ष चुनें" : "Select Year"}
@@ -90,7 +91,6 @@ const displayImages = preview
               </div>
             </div>
 
-            {/* Category Track */}
             <div className="flex flex-col gap-3">
               <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 flex items-center gap-2 px-1">
                 <Filter size={12} /> {lang === "hi" ? "श्रेणी" : "Category"}
@@ -120,13 +120,13 @@ const displayImages = preview
           </div>
         )}
 
-        {/* 🖼️ DYNAMIC MASONRY GRID (Mobile Fixed) */}
+        {/* 🖼️ GRID */}
         <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
           <AnimatePresence mode="popLayout">
             {displayImages.map((img, i) => (
               <motion.div
                 layout
-                key={img.url}
+                key={img.url + i}   // ✅ FIXED
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9 }}
@@ -134,7 +134,6 @@ const displayImages = preview
                 viewport={{ once: true }}
                 className="relative group break-inside-avoid rounded-[1.2rem] md:rounded-[1.8rem] overflow-hidden cursor-pointer bg-slate-100"
               >
-                {/* Image */}
                 <img
                   src={img.url}
                   alt="Gallery"
@@ -142,13 +141,17 @@ const displayImages = preview
                   className="w-full h-auto object-cover transition-all duration-700 group-hover:scale-105"
                 />
 
-                {/* Overlays (Hidden on mobile touch by default, shows on click/hover) */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-5">
                    <div className="flex items-center gap-2 mb-1">
                       <span className="text-[9px] font-bold text-emerald-400 uppercase tracking-widest">{img.year}</span>
                    </div>
                    <h4 className="text-white font-gotu font-bold text-xs md:text-sm capitalize">{img.category}</h4>
-                   
+
+                   {/* 🔥 DATE (optional) */}
+                   {img.date && (
+                     <span className="text-[9px] text-white/80 mt-1">{img.date}</span>
+                   )}
+
                    <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
                       <Maximize2 size={14} />
                    </div>
@@ -158,13 +161,13 @@ const displayImages = preview
           </AnimatePresence>
         </div>
 
-        {/* 🚀 MOBILE CTA */}
+        {/* 🚀 CTA BUTTON (only preview) */}
         {preview && (
           <div className="mt-12 md:mt-20 flex justify-center">
             <Link to="/gallery" className="w-full md:w-auto">
               <motion.button 
                 whileTap={{ scale: 0.95 }}
-                className="w-full md:px-12 py-4 rounded-full bg-[#112250] text-white text-[10px] font-black uppercase tracking-[0.4em] shadow-xl"
+                className="w-full md:px-12 py-4 rounded-full bg-[#112250] text-white text-[10px] font-black uppercase  shadow-xl"
               >
                 {lang === "hi" ? "गैलरी खोलें" : "Open Full Gallery"}
               </motion.button>

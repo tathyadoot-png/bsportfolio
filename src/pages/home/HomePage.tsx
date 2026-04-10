@@ -6,7 +6,7 @@ import HeroSection from "./sections/home/HeroSection";
 import AboutSection from "./sections/about/AboutSection";
 import JourneySection from "./sections/journey/JourneySection";
 import AchievementsSection from "./sections/achievements/AchievementsSection";
-import GallerySection from "./sections/gallery/GallerySection";
+import GallerySection from "./sections/media/GallerySection";
 import ContactSection from "./sections/contact/ContactSection";
 import GovernmentWorkSection from "./sections/government/GovernmentWorkSection";
 
@@ -43,7 +43,7 @@ const HomePage = () => {
 
       {/* 🖼 GALLERY PREVIEW */}
       <section>
-       <GallerySection lang={lang}  />
+       <GallerySection lang={lang} preview />
       </section>
 
       {/* 📞 CONTACT */}

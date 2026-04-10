@@ -1,6 +1,6 @@
 import { useOutletContext } from "react-router-dom";
 import type { Lang } from "@/layouts/MainLayout";
-import GallerySection from "@/pages/home/sections/gallery/GallerySection";
+import GallerySection from "@/pages/home/sections/media/GallerySection";
 
 const GalleryPage = () => {
   const { lang } = useOutletContext<{ lang: Lang }>();
