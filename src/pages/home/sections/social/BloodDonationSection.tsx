@@ -49,7 +49,7 @@ const BloodDonationSection = ({ lang }: Props) => {
                 <div className="lg:col-span-5">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="h-[2px] w-8 bg-red-600"></span>
-                    <p className="text-red-600 font-bold text-[10px] tracking-[0.3em] uppercase italic">Impact Story</p>
+                    <p className="text-red-600 font-bold text-[10px] uppercase italic">Impact Story</p>
                   </div>
                   <h1 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight mb-6">
                     {event.title[lang]}
@@ -60,11 +60,11 @@ const BloodDonationSection = ({ lang }: Props) => {
                   <div className="flex flex-wrap gap-4">
                     <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-xl shadow-sm border border-slate-50">
                       <Calendar className="w-4 h-4 text-orange-500" />
-                      <span className="text-sm font-bold tracking-tighter">{event.date}</span>
+                      <span className="text-sm font-bold ">{event.date}</span>
                     </div>
                     <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-xl shadow-sm border border-slate-50">
                       <MapPin className="w-4 h-4 text-red-500" />
-                      <span className="text-sm font-bold tracking-tighter">{event.location}</span>
+                      <span className="text-sm font-bold ">{event.location}</span>
                     </div>
                   </div>
                 </div>
@@ -105,7 +105,7 @@ const BloodDonationSection = ({ lang }: Props) => {
                     >
                       <div className="flex flex-col items-center gap-1">
                         {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
-                        <span className="text-[10px] font-bold uppercase tracking-[0.4em]">
+                        <span className="text-[10px] font-bold uppercase ">
                           {isExpanded ? 'Show Less' : `+${event.images.length - 3} More Images`}
                         </span>
                       </div>
@@ -123,7 +123,7 @@ const BloodDonationSection = ({ lang }: Props) => {
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} 
             className="fixed inset-0 z-[10000] bg-white/95 backdrop-blur-2xl flex flex-col items-center justify-center p-6"
           >
-            <div className="absolute top-10 text-black font-black text-xs tracking-[0.5em] opacity-30">
+            <div className="absolute top-10 text-black font-black text-xs  opacity-30">
               {sliderData.index + 1} / {sliderData.images.length}
             </div>
             <div className="relative w-full max-w-6xl flex items-center justify-center">

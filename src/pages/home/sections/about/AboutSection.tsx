@@ -78,7 +78,7 @@ const HomeAbout = () => {
               className="absolute -bottom-6 -left-6 lg:-left-12 p-8 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] shadow-2xl"
             >
                <p className="text-orange-500 font-black text-5xl leading-none">{t.experience}</p>
-               <p className="text-[10px] text-emerald-400 uppercase tracking-[0.2em] font-bold mt-2">Sustained Progress</p>
+               <p className="text-[10px] text-emerald-400 uppercase  font-bold mt-2">Sustained Progress</p>
             </motion.div>
           </div>
 
@@ -90,12 +90,12 @@ const HomeAbout = () => {
             {/* Top Badge */}
             <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
                <Zap size={16} fill="currentColor" />
-               <span className="text-[10px] font-black uppercase tracking-[0.3em]">Commitment & Service</span>
+               <span className="text-[10px] font-black uppercase">Commitment & Service</span>
             </div>
 
             {/* MAIN NAME: Fixed for Hindi Matra Overlap */}
             <div className="space-y-2">
-               <h2 className="font-gotu text-7xl md:text-9xl lg:text-[10.5rem] text-white leading-[1.1] tracking-tighter">
+               <h2 className="font-gotu text-7xl md:text-9xl lg:text-[10.5rem] text-white leading-[1.1]">
                  <span className="block opacity-90">{t.nameFirst}</span>
                  <div className="block text-orange-500 italic font-black -mt-4 pt-6 ps-12 lg:mt-10">
                    {t.nameLast}
@@ -115,13 +115,13 @@ const HomeAbout = () => {
 
               {/* ACTION AREA */}
               <div className="flex flex-wrap items-center gap-8 pt-6">
-                 <button className="px-12 py-5 bg-emerald-600 hover:bg-orange-500 text-white rounded-full font-bold uppercase text-[10px] tracking-[0.3em] flex items-center gap-4 transition-all shadow-xl shadow-emerald-950/40 group">
+                 <button className="px-12 py-5 bg-emerald-600 hover:bg-orange-500 text-white rounded-full font-bold uppercase text-[10px]  flex items-center gap-4 transition-all shadow-xl shadow-emerald-950/40 group">
                     View Full Journey <MoveUpRight size={16} className="group-hover:rotate-45 transition-transform" />
                  </button>
 
                  <div className="flex items-center gap-4 text-white/60">
                     <ShieldCheck size={24} className="text-orange-500" />
-                    <span className="text-sm font-bold uppercase tracking-widest">{t.party}</span>
+                    <span className="text-sm font-bold uppercase ">{t.party}</span>
                  </div>
               </div>
             </div>
@@ -133,7 +133,7 @@ const HomeAbout = () => {
       {/* Decorative Side Marker */}
       <div className="absolute left-10 bottom-20 flex flex-col items-center gap-6 opacity-20">
          <div className="w-[1px] h-20 bg-emerald-500" />
-         <span className="[writing-mode:vertical-lr] text-[10px] text-white uppercase tracking-[0.4em]">Development</span>
+         <span className="[writing-mode:vertical-lr] text-[10px] text-white uppercase ">Development</span>
       </div>
     </section>
   );

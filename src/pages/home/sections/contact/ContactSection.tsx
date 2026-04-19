@@ -115,7 +115,7 @@ const ContactSection = ({ lang }: Props) => {
 
                {/* Mobile Minimal Footer */}
                <div className="mt-6 flex items-center justify-center gap-4 opacity-20 grayscale md:hidden">
-                  <span className="text-[8px] font-black uppercase tracking-widest text-center">Secure • 24/7 Monitoring</span>
+                  <span className="text-[8px] font-black uppercase  text-center">Secure • 24/7 Monitoring</span>
                </div>
             </div>
 

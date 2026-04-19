@@ -29,7 +29,7 @@ const ContributionsSection = ({ lang, preview = false }: Props) => {
             <motion.span 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="text-orange-500 font-black text-xs uppercase tracking-[0.6em] mb-4 block"
+              className="text-orange-500 font-black text-xs uppercase  mb-4 block"
             >
               {lang === "hi" ? "समाज और राष्ट्र" : "Legacy & Impact"}
             </motion.span>
@@ -101,7 +101,7 @@ const ContributionsSection = ({ lang, preview = false }: Props) => {
           <div className="mt-20 flex justify-center">
             <Link
               to="/contributions"
-              className="group relative px-12 py-5 bg-white rounded-full text-black font-black text-[10px] uppercase tracking-[0.4em] overflow-hidden shadow-[0_20px_50px_rgba(255,255,255,0.1)] transition-all"
+              className="group relative px-12 py-5 bg-white rounded-full text-black font-black text-[10px] uppercase overflow-hidden shadow-[0_20px_50px_rgba(255,255,255,0.1)] transition-all"
             >
               <span className="relative z-10 group-hover:text-white transition-colors duration-500">
                 {lang === "hi" ? "पूर्ण योगदान रिपोर्ट" : "Full Impact Report"}

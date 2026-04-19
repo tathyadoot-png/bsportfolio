@@ -50,7 +50,7 @@ const AboutPage = () => {
           transition={{ duration: 1 }}
         >
            
-           <h2 className="mt-10 font-gotu text-[12vw] md:text-[11vw] leading-none tracking-tighter text-orange-500 uppercase mix-blend-difference">
+           <h2 className="mt-10 font-gotu text-[12vw] md:text-[11vw] leading-none  text-orange-500 uppercase mix-blend-difference">
               {t.nameFirst} <br />
               <div className="text-[#0c5e48] font-black italic pt-16">{t.nameLast}</div>
            </h2>
@@ -61,7 +61,7 @@ const AboutPage = () => {
              transition={{ repeat: Infinity, duration: 2 }}
              className="mt-20 text-[#0c5e48] flex flex-col items-center gap-2"
            >
-              <span className="text-xs tracking-[0.4em] font-bold uppercase">Scroll to Explore</span>
+              <span className="text-xs font-bold uppercase">Scroll to Explore</span>
               <MoveDown size={30} />
            </motion.div>
         </motion.div>
@@ -95,7 +95,7 @@ const AboutPage = () => {
           <div className="space-y-10">
             <div className="space-y-4">
               <span className="text-[#0c5e48] font-black text-6xl block">{t.experience}</span>
-              <p className="text-orange-500 text-xl font-asar leading-relaxed uppercase tracking-widest">Years of Dedicated Service</p>
+              <p className="text-orange-500 text-xl font-asar leading-relaxed uppercase ">Years of Dedicated Service</p>
             </div>
             
             <div className="p-8 rounded-3xl bg-[#0c5e48] text-white flex items-center gap-6">

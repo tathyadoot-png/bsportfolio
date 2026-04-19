@@ -71,7 +71,7 @@ const GallerySection = ({ lang, preview = false }: Props) => {
           <div className="flex flex-col gap-6 mb-12">
             
             <div className="flex flex-col gap-3">
-              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 flex items-center gap-2 px-1">
+              <span className="text-[10px] font-black uppercase  text-slate-400 flex items-center gap-2 px-1">
                 <Calendar size={12} /> {lang === "hi" ? "वर्ष चुनें" : "Select Year"}
               </span>
               <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar -mx-2 px-2">
@@ -79,7 +79,7 @@ const GallerySection = ({ lang, preview = false }: Props) => {
                   <button
                     key={y}
                     onClick={() => setYear(y)}
-                    className={`flex-shrink-0 px-6 py-2.5 rounded-full text-[11px] font-bold uppercase tracking-wider transition-all border ${
+                    className={`flex-shrink-0 px-6 py-2.5 rounded-full text-[11px] font-bold uppercase  transition-all border ${
                       year === y 
                       ? 'bg-[#112250] text-white border-[#112250] shadow-md' 
                       : 'bg-white text-slate-500 border-slate-200 hover:border-[#112250]'
@@ -92,7 +92,7 @@ const GallerySection = ({ lang, preview = false }: Props) => {
             </div>
 
             <div className="flex flex-col gap-3">
-              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 flex items-center gap-2 px-1">
+              <span className="text-[10px] font-black uppercase  text-slate-400 flex items-center gap-2 px-1">
                 <Filter size={12} /> {lang === "hi" ? "श्रेणी" : "Category"}
               </span>
               <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar -mx-2 px-2">
@@ -106,7 +106,7 @@ const GallerySection = ({ lang, preview = false }: Props) => {
                   <button
                     key={cat.id}
                     onClick={() => setCategory(cat.id)}
-                    className={`flex-shrink-0 px-6 py-2.5 rounded-full text-[11px] font-bold uppercase tracking-wider transition-all border ${
+                    className={`flex-shrink-0 px-6 py-2.5 rounded-full text-[11px] font-bold uppercase  transition-all border ${
                       category === cat.id 
                       ? 'bg-emerald-600 text-white border-emerald-600 shadow-md' 
                       : 'bg-white text-slate-500 border-slate-200 hover:border-emerald-600'
@@ -143,7 +143,7 @@ const GallerySection = ({ lang, preview = false }: Props) => {
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-5">
                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-[9px] font-bold text-emerald-400 uppercase tracking-widest">{img.year}</span>
+                      <span className="text-[9px] font-bold text-emerald-400 uppercase ">{img.year}</span>
                    </div>
                    <h4 className="text-white font-gotu font-bold text-xs md:text-sm capitalize">{img.category}</h4>
 

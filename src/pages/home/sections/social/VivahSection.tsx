@@ -82,7 +82,7 @@ const VivahSection = () => {
                 <h3 className="text-5xl md:text-6xl font-black text-[#FF9933] leading-none">
                   {vivahData.total[lang].split(' ')[0]}<span className="text-white"></span>
                 </h3>
-                <p className="text-white/40 uppercase tracking-[0.4em] text-[10px] font-bold mt-1">
+                <p className="text-white/40 uppercase text-[10px] font-bold mt-1">
                   {vivahData.total[lang].split(' ').slice(1).join(' ')}
                 </p>
               </div>
@@ -110,9 +110,9 @@ const VivahSection = () => {
                 <div className="lg:col-span-5 lg:sticky lg:top-32 h-fit">
                   <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FF9933]/10 text-[#FF9933] rounded-full mb-6">
                     <span className="w-2 h-2 bg-[#FF9933] rounded-full animate-pulse" />
-                    <span className="text-[10px] font-bold uppercase tracking-widest">Welfare Initiative</span>
+                    <span className="text-[10px] font-bold uppercase  ">Welfare Initiative</span>
                   </div>
-                  <h2 className="text-4xl md:text-5xl font-black text-[#112250] mb-6 leading-[1.1] tracking-tight">
+                  <h2 className="text-4xl md:text-5xl font-black text-[#112250] mb-6 leading-[1.1]  ">
                     {event.title[lang]}
                   </h2>
                   <div className="flex flex-wrap gap-3 mb-8">
@@ -193,7 +193,7 @@ const VivahSection = () => {
                       <div className="absolute inset-0 bg-[#FF9933] translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                       <div className="relative z-10 flex items-center justify-center gap-3">
                         {isExpanded ? <ChevronUp size={20} /> : <ChevronDown size={20} className="animate-bounce" />}
-                        <span className="text-[10px] font-black uppercase tracking-[0.5em]">
+                        <span className="text-[10px] font-black uppercase ">
                           {isExpanded ? 'Show Less' : `View all ${galleryImages.length - 3} Moments`}
                         </span>
                       </div>
@@ -215,7 +215,7 @@ const VivahSection = () => {
             exit={{ opacity: 0 }} 
             className="fixed inset-0 z-[10000] bg-[#112250]/95 backdrop-blur-xl flex flex-col items-center justify-center p-4 md:p-10"
           >
-            <div className="absolute top-8 flex items-center gap-4 text-white/30 font-black text-[10px] tracking-[0.6em] uppercase">
+            <div className="absolute top-8 flex items-center gap-4 text-white/30 font-black text-[10px] uppercase">
                <span>Immersion Mode</span> <div className="w-12 h-px bg-white/10" /> <span>{sliderData.index + 1} / {sliderData.images.length}</span>
             </div>
 
@@ -255,7 +255,7 @@ const VivahSection = () => {
                  <button onClick={() => setSliderData({...sliderData, index: (sliderData.index - 1 + sliderData.images.length) % sliderData.images.length})} className="p-4 bg-white/10 rounded-full text-white"><ChevronLeft /></button>
                  <button onClick={() => setSliderData({...sliderData, index: (sliderData.index + 1) % sliderData.images.length})} className="p-4 bg-white/10 rounded-full text-white"><ChevronRight /></button>
               </div>
-              <button onClick={() => setSliderData(null)} className="px-12 py-5 bg-white text-[#112250] rounded-full font-black flex items-center gap-4 hover:bg-[#FF9933] hover:text-white transition-all shadow-2xl text-[10px] tracking-[0.4em]">
+              <button onClick={() => setSliderData(null)} className="px-12 py-5 bg-white text-[#112250] rounded-full font-black flex items-center gap-4 hover:bg-[#FF9933] hover:text-white transition-all shadow-2xl text-[10px] ">
                 <X size={18} /> EXIT GALLERY
               </button>
             </div>

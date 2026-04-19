@@ -56,7 +56,7 @@ const SocialWorkPage = () => {
                         <Icon size={32} /> {/* ✅ FIXED */}
                       </div>
 
-                      <span className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-600 bg-emerald-50 px-4 py-1.5 rounded-full">
+                      <span className="text-[10px] font-black uppercase  text-emerald-600 bg-emerald-50 px-4 py-1.5 rounded-full">
                         {item.tag}
                       </span>
                     </div>
@@ -76,7 +76,7 @@ const SocialWorkPage = () => {
                     <div className="mt-10 flex items-center justify-between relative z-10">
                       <div className="flex items-center gap-2 text-slate-400 group-hover:text-orange-500 transition-colors">
                         <ShieldCheck size={18} />
-                        <span className="text-[10px] font-bold uppercase tracking-widest">
+                        <span className="text-[10px] font-bold uppercase  ">
                           {isHi ? "प्रमाणित कार्य" : "Verified Work"}
                         </span>
                       </div>

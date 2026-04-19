@@ -73,10 +73,10 @@ const Navbar = ({ lang, setLang }: NavbarProps) => {
             alt="Logo" 
           />
           <div className="flex flex-col">
-            <h1 className="font-heading text-secondary text-sm md:text-xl tracking-tight leading-none">
+            <h1 className="font-heading text-secondary text-sm md:text-xl  leading-none">
               {profileData[lang].fullName}
             </h1>
-            <span className="hidden md:block text-[10px] uppercase tracking-[0.2em] font-bold text-primary/80 mt-1">
+            <span className="hidden md:block text-[10px] uppercase  font-bold text-primary/80 mt-1">
               Service • Integrity
             </span>
           </div>
@@ -150,7 +150,7 @@ const Navbar = ({ lang, setLang }: NavbarProps) => {
 
           <Link
             to="/contact"
-            className="hidden sm:flex items-center gap-2 bg-secondary text-white px-5 py-2.5 rounded-full font-bold text-[11px] uppercase tracking-widest shadow-md hover:bg-primary transition-all"
+            className="hidden sm:flex items-center gap-2 bg-secondary text-white px-5 py-2.5 rounded-full font-bold text-[11px] uppercase  shadow-md hover:bg-primary transition-all"
           >
             {t.cta.contact}
             <Sparkles size={14} />
@@ -216,7 +216,7 @@ const Navbar = ({ lang, setLang }: NavbarProps) => {
                       </Link>
                     ) : (
                       <div className="bg-gray-50/50 rounded-2xl p-4">
-                        <span className="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-3 block">{item.label}</span>
+                        <span className="text-[10px] font-black text-primary uppercase  mb-3 block">{item.label}</span>
                         <div className="grid grid-cols-1 gap-2">
                           {item.dropdown?.map(sub => (
                             <Link 

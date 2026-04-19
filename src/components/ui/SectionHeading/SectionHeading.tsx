@@ -62,7 +62,7 @@ const SectionHeading = ({
   return (
     <div
       ref={containerRef}
-      className="relative w-full max-w-[1400px] mx-auto mb-6 md:mb-10 px-4 overflow-hidden flex flex-col items-center text-center pt-0 pb-2"
+      className="relative w-full max-w-[1400px] mx-auto mb-6 md:mb-6 px-4 overflow-hidden flex flex-col items-center text-center pt-0 "
     >
       {/* 👻 GHOST TEXT (Positioned tightly) */}
       <div 
@@ -92,7 +92,7 @@ const SectionHeading = ({
 
       {/* 🏆 MAIN TITLE (Sized for Elegance) */}
       <div className="relative z-10">
-        <h2 className={`title-main font-gotu text-3xl md:text-4xl lg:text-6xl font-black ${titleColor} leading-tight uppercase tracking-tighter`}>
+        <h2 className={`title-main font-gotu text-3xl md:text-4xl lg:text-6xl font-black ${titleColor} leading-tight uppercase `}>
           {title}
         </h2>
       </div>

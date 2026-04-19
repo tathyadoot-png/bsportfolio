@@ -71,7 +71,7 @@ const ActivitiesSection = ({ lang }: { lang: "hi" | "en" }) => {
                 {/* Floating Badge */}
                 <div className="absolute top-4 left-4 px-4 py-2 bg-white/90 backdrop-blur-md rounded-full shadow-sm flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-green animate-ping" />
-                  <span className="text-[10px] font-bold text-secondary tracking-tighter uppercase">{item.location}</span>
+                  <span className="text-[10px] font-bold text-secondary  uppercase">{item.location}</span>
                 </div>
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
@@ -82,7 +82,7 @@ const ActivitiesSection = ({ lang }: { lang: "hi" | "en" }) => {
               </div>
 
               <div className="p-5">
-                <div className="flex items-center gap-3 text-muted text-[11px] font-bold mb-3 tracking-widest uppercase">
+                <div className="flex items-center gap-3 text-muted text-[11px] font-bold mb-3  uppercase">
                   <Calendar size={14} className="text-primary" />
                   {item.date}
                 </div>
@@ -169,13 +169,13 @@ const ActivitiesSection = ({ lang }: { lang: "hi" | "en" }) => {
               <div className="flex-1 bg-white p-8 lg:p-16 overflow-y-auto">
                 <div className="max-w-xl mx-auto space-y-8">
                   <div className="space-y-4 pt-4 sm:pt-0">
-                    <div className="flex items-center gap-2 text-green font-bold text-xs tracking-widest uppercase">
+                    <div className="flex items-center gap-2 text-green font-bold text-xs  uppercase">
                       <MapPin size={16} /> {activeItem.location}
                     </div>
                     <h2 className="text-3xl lg:text-5xl font-gotu font-bold text-secondary leading-[1.1]">
                       {isHi ? activeItem.title.hi : activeItem.title.en}
                     </h2>
-                    <p className="text-primary font-bold text-sm tracking-widest">{activeItem.date}</p>
+                    <p className="text-primary font-bold text-sm ">{activeItem.date}</p>
                   </div>
                   <div className="w-20 h-1.5 bg-primary/20 rounded-full" />
                   <p className="text-muted font-playpen text-lg leading-relaxed text-justify">

@@ -1,12 +1,11 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Star, Award, Zap, Building, Calendar } from "lucide-react";
+import { ArrowRight, Award, Zap, Building, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 import gsap from "gsap";
 
-// Swiper CSS (Very Important)
 import "swiper/css";
 import "swiper/css/effect-fade";
 
@@ -27,125 +26,106 @@ const HeroSection = ({ lang }: Props) => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Text and Stats entrance
       const tl = gsap.timeline();
       tl.from(".hero-content > *", {
-        y: 40,
+        y: 20,
         opacity: 0,
-        stagger: 0.2,
-        duration: 1,
-        ease: "power3.out",
-      }).from(".hero-stats-bar", {
-        y: 100,
-        opacity: 0,
-        duration: 1,
-        ease: "expo.out"
-      }, "-=0.5");
+        stagger: 0.1,
+        duration: 0.8,
+        ease: "power2.out",
+      });
     }, heroRef);
     return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={heroRef} className="relative h-screen w-full overflow-hidden bg-[#0a0a0a] text-white">
+    // ✅ Change 1: White Background (Light Mode)
+    <section ref={heroRef} className="relative min-h-screen w-full overflow-hidden bg-white text-slate-900 flex flex-col">
       
-      {/* 🖼️ ULTRA-SMOOTH BACKGROUND SLIDER */}
-      <div className="absolute inset-0 z-0">
+      {/* 🖼️ IMAGE SECTION - Navbar ke niche shift kiya hai */}
+      {/* ✅ Change 2: Added 'mt-20' for mobile and 'mt-0' for desktop to avoid Navbar overlap */}
+      <div className="relative w-full h-[45vh] md:h-screen mt-24 md:mt-0 z-0">
         <Swiper
           modules={[Autoplay, EffectFade]}
           effect="fade"
-          fadeEffect={{ crossFade: true }} // Fixes the overlap/ghosting issue
+          fadeEffect={{ crossFade: true }}
           speed={2000} 
           autoplay={{ delay: 4500, disableOnInteraction: false }}
           loop={true}
           className="h-full w-full"
         >
           {slides.map((img, index) => (
-            <SwiperSlide key={index} className="bg-black">
-              {/* Ken Burns Animation */}
+            <SwiperSlide key={index}>
               <motion.div 
-                initial={{ scale: 1.1 }}
+                initial={{ scale: 1.05 }}
                 animate={{ scale: 1 }}
-                transition={{ duration: 5, ease: "easeOut" }}
+                transition={{ duration: 5 }}
                 className="h-full w-full"
               >
                 <img
                   src={img}
                   alt={`Slide ${index}`}
-                  className="h-full w-full object-cover object-top opacity-50"
+                  className="h-full w-full object-cover object-top" 
                 />
               </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
         
-        {/* Modern Overlays for Readability */}
-      
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
+        {/* ✅ Change 3: Light Gradients (Clean look) */}
+        {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-transparent to-transparent hidden md:block z-10" /> */}
       </div>
 
-      {/* 📝 CONTENT LAYER */}
-      <div className="relative z-20 h-full w-[94%] max-w-[1500px] mx-auto flex flex-col justify-center">
-        <div className="hero-content max-w-4xl space-y-8">
+      {/* 📝 CONTENT LAYER - Light Theme text colors */}
+      <div className="relative z-20 flex-grow w-[90%] max-w-[1400px] mx-auto flex flex-col justify-start md:justify-center py-8 md:py-0">
+        <div className="hero-content space-y-5 md:space-y-8">
           
-          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-orange-400 backdrop-blur-md">
-            <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.4em]">
-              {isHi ? "जनसेवा एवं विकास का संकल्प" : "The Visionary Leader"}
+          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-orange-500/5 border border-orange-500/10 text-orange-600">
+            <div className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
+            <span className="text-[10px] font-black uppercase ">
+              {isHi ? "जनसेवा एवं विकास का संकल्प" : "Leadership & Vision"}
             </span>
           </div>
 
-          <h1 className="font-gotu text-7xl md:text-[8rem] lg:text-[10rem] leading-[0.85] tracking-tighter">
-            <span className="font-semibold italic block opacity-80 pb-6">{isHi ? "भूपेंद्र" : "Bhupendra"}</span>
-            <span className="font-semibold text-orange-500 block pt-6 ps-32">{isHi ? "सिंह" : "Singh"}</span>
+          <h1 className="font-gotu text-5xl md:text-[7rem] lg:text-[9rem] leading-[0.95] text-slate-900">
+            <span className=" pb-2 font-light italic block opacity-80">{isHi ? "भूपेंद्र" : "Bhupendra"}</span>
+            <span className="font-bold text-orange-500 block pl-8">{isHi ? "सिंह" : "Singh"}</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-400 font-asar max-w-2xl leading-relaxed border-l-4 border-orange-500/60 pl-8">
+          <p className="text-sm md:text-xl text-slate-600 font-asar max-w-xl leading-relaxed border-l-2 border-orange-500/40 pl-6">
             {isHi 
-              ? "अनुभव के 45 वर्ष, विकास की अटूट प्रतिबद्धता। सागर के हृदय सम्राट।" 
-              : "45 Years of unwavering commitment. A leader built by the people, for the people."}
+              ? "अनुभव के 45 वर्ष, विकास की अटूट प्रतिबद्धता।" 
+              : "45 Years of service and commitment to progress."}
           </p>
 
-          <div className="flex flex-wrap gap-6 pt-4">
-            <Link to="/about" className="group relative px-10 py-5 bg-orange-500 text-white rounded-2xl font-bold uppercase tracking-widest overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-orange-500/20">
-              <span className="relative z-10 flex items-center gap-3">
-                {isHi ? "जीवन परिचय" : "Biography"} <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </span>
+          <div className="flex flex-wrap gap-4 pt-2">
+            <Link to="/about" className="group px-7 py-3.5 bg-orange-500 text-white rounded-xl font-bold uppercase text-[10px]  flex items-center gap-3 transition-all shadow-md hover:shadow-orange-500/30">
+              {isHi ? "जीवन परिचय" : "Biography"} <ArrowRight size={14} />
             </Link>
-            
-            <Link to="/contact" className="px-10 py-5 bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/10 text-white rounded-2xl font-bold uppercase tracking-widest transition-all">
+            <Link to="/contact" className="px-7 py-3.5 bg-slate-100 border border-slate-200 text-slate-700 rounded-xl font-bold uppercase text-[10px]  transition-all">
               {isHi ? "संपर्क" : "Contact"}
             </Link>
           </div>
         </div>
-
-        {/* 📊 MODERN GLASS STATS BAR */}
-        <div className="hero-stats-bar absolute bottom-12 left-0 right-0 hidden lg:grid grid-cols-4 gap-4 px-8 py-6 bg-white/[0.03] backdrop-blur-2xl border border-white/10 rounded-[2.5rem]">
-          {[
-            { icon: <Zap className="text-orange-400" />, val: "5+", label: "MLA Terms" },
-            { icon: <Building className="text-emerald-400" />, val: "100+", label: "Projects" },
-            { icon: <Calendar className="text-blue-400" />, val: "45+", label: "Years Exp." },
-            { icon: <Award className="text-yellow-400" />, val: "1200+", label: "Villages" },
-          ].map((stat, i) => (
-            <div key={i} className="flex items-center gap-5 border-r border-white/5 last:border-0 justify-center">
-              <div className="p-3 bg-white/5 rounded-2xl border border-white/5">{stat.icon}</div>
-              <div>
-                <div className="text-3xl font-bold text-white tracking-tighter">{stat.val}</div>
-                <div className="text-[10px] uppercase font-bold text-gray-500 tracking-widest">{stat.label}</div>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
 
-      {/* Scroll Dot Indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-3">
-        <div className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center p-1">
-          <motion.div 
-            animate={{ y: [0, 12, 0] }}
-            transition={{ repeat: Infinity, duration: 2 }}
-            className="w-1.5 h-1.5 bg-orange-500 rounded-full" 
-          />
-        </div>
+      {/* 📊 LIGHT STATS BAR */}
+      <div className="hero-stats-bar relative z-30 w-[94%] mx-auto mb-8 hidden lg:grid grid-cols-4 gap-4 px-6 py-6 bg-slate-50 border border-slate-200 rounded-3xl shadow-sm">
+        {[
+          { icon: <Zap className="text-orange-500" />, val: "5+", label: "MLA Terms" },
+          { icon: <Building className="text-emerald-600" />, val: "100+", label: "Projects" },
+          { icon: <Calendar className="text-blue-600" />, val: "45+", label: "Years Exp." },
+          { icon: <Award className="text-yellow-600" />, val: "1200+", label: "Villages" },
+        ].map((stat, i) => (
+          <div key={i} className="flex items-center gap-4 border-r border-slate-200 last:border-0 justify-center">
+            <div className="p-2.5 bg-white rounded-xl border border-slate-100 shadow-sm">{stat.icon}</div>
+            <div>
+              <div className="text-2xl font-black text-slate-800">{stat.val}</div>
+              <div className="text-[9px] uppercase font-black text-slate-400  ">{stat.label}</div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

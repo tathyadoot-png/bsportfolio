@@ -75,9 +75,9 @@ const RudrakshDhamSection = ({ lang, preview = false }: Props) => {
                 <div className="lg:col-span-5 lg:sticky lg:top-32 h-fit">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="h-[1.5px] w-10 bg-[#FF9933]" />
-                    <span className="text-[#FF9933] font-bold text-[9px] tracking-[0.4em] uppercase">Sacred Initiative</span>
+                    <span className="text-[#FF9933] font-bold text-[9px] uppercase">Sacred Initiative</span>
                   </div>
-                  <h3 className="text-3xl md:text-5xl font-black text-[#112250] mb-6 leading-tight tracking-tight">
+                  <h3 className="text-3xl md:text-5xl font-black text-[#112250] mb-6 leading-tight  ">
                     {event.title[lang]}
                   </h3>
                   
@@ -97,7 +97,7 @@ const RudrakshDhamSection = ({ lang, preview = false }: Props) => {
                   </p>
 
                   {preview && (
-                    <a href="/rudraksh-dham" className="inline-flex items-center gap-2 text-[#112250] font-black text-[10px] uppercase tracking-widest hover:text-[#FF9933] transition-colors">
+                    <a href="/rudraksh-dham" className="inline-flex items-center gap-2 text-[#112250] font-black text-[10px] uppercase   hover:text-[#FF9933] transition-colors">
                       {isHi ? "और जानें" : "Learn More"} →
                     </a>
                   )}
@@ -166,7 +166,7 @@ const RudrakshDhamSection = ({ lang, preview = false }: Props) => {
                       className="w-full mt-6 py-5 bg-[#112250] text-white rounded-[2.5rem] flex items-center justify-center gap-3 hover:bg-[#FF9933] transition-all shadow-xl active:scale-[0.98] group"
                     >
                       {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} className="animate-bounce" />}
-                      <span className="text-[9px] font-black uppercase tracking-[0.4em]">
+                      <span className="text-[9px] font-black uppercase">
                         {isExpanded ? "Show Less" : `View ${galleryImages.length - 3} More Moments`}
                       </span>
                     </motion.button>
@@ -183,7 +183,7 @@ const RudrakshDhamSection = ({ lang, preview = false }: Props) => {
       <AnimatePresence>
         {sliderData && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[10000] bg-white/95 backdrop-blur-3xl flex flex-col items-center justify-center p-6">
-            <div className="absolute top-10 flex items-center gap-4 text-[#112250]/30 font-black text-[9px] tracking-[0.5em] uppercase">
+            <div className="absolute top-10 flex items-center gap-4 text-[#112250]/30 font-black text-[9px]  uppercase">
                <span>Gallery</span> <div className="w-10 h-px bg-[#112250]/10" /> <span>{sliderData.index + 1} / {sliderData.images.length}</span>
             </div>
             <div className="relative w-full max-w-6xl flex items-center justify-center">
@@ -201,7 +201,7 @@ const RudrakshDhamSection = ({ lang, preview = false }: Props) => {
                 <ChevronRight size={28} />
               </button>
             </div>
-            <button onClick={() => setSliderData(null)} className="mt-10 px-12 py-4 bg-[#112250] text-white rounded-full font-black flex items-center gap-3 hover:bg-[#FF9933] hover:scale-105 transition-all shadow-xl text-[9px] tracking-[0.4em]">
+            <button onClick={() => setSliderData(null)} className="mt-10 px-12 py-4 bg-[#112250] text-white rounded-full font-black flex items-center gap-3 hover:bg-[#FF9933] hover:scale-105 transition-all shadow-xl text-[9px] ">
               <X size={16} /> CLOSE GALLERY
             </button>
           </motion.div>

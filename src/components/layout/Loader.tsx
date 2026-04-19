@@ -41,7 +41,7 @@ const Loader = ({ lang, onFinish }: Props) => {
   }, [onFinish]);
 
   // Symmetrical Block Style (Matra Safe)
-  const nameStyle = "text-[12vw] md:text-[7.5vw] font-black uppercase tracking-tighter leading-[1.4] py-4 px-0";
+  const nameStyle = "text-[12vw] md:text-[7.5vw] font-black uppercase  leading-[1.4] py-4 px-0";
 
   return (
     <div 
@@ -89,7 +89,7 @@ const Loader = ({ lang, onFinish }: Props) => {
       </div>
 
       {/* 📐 CORNER STATS */}
-      <div className="absolute top-10 left-10 text-[8px] font-mono text-black/10 uppercase tracking-[0.5em] hidden md:block">
+      <div className="absolute top-10 left-10 text-[8px] font-mono text-black/10 uppercase  hidden md:block">
         Legislative_Session_2026
       </div>
     </div>

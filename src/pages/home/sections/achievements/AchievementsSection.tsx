@@ -71,7 +71,7 @@ const AchievementsSection = ({ lang, preview = false }: Props) => {
                         <div className="w-12 h-12 rounded-full bg-[#112250] text-white flex items-center justify-center shadow-lg group-hover:bg-orange-500 transition-colors">
                           <Trophy size={20} />
                         </div>
-                        <span className="text-[10px] font-black tracking-[0.4em] text-emerald-600 uppercase">Honor Roll</span>
+                        <span className="text-[10px] font-black  text-emerald-600 uppercase">Honor Roll</span>
                       </div>
 
                       <h3 className="text-2xl md:text-4xl font-asar font-bold text-[#112250] leading-[1.4] mb-8">
@@ -113,7 +113,7 @@ const AchievementsSection = ({ lang, preview = false }: Props) => {
               className="group relative px-12 py-5 rounded-full overflow-hidden flex items-center gap-4 border border-slate-200 hover:border-emerald-500 transition-all"
             >
               <div className="absolute inset-0 bg-emerald-500 translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500" />
-              <span className="relative z-10 font-black text-[10px] tracking-[0.4em] text-[#112250] group-hover:text-white transition-colors">
+              <span className="relative z-10 font-black text-[10px]  text-[#112250] group-hover:text-white transition-colors">
                 {lang === "hi" ? "पूरी सूची देखें" : "View Full Recognition List"}
               </span>
               <ArrowUpRight size={18} className="relative z-10 text-emerald-500 group-hover:text-white transition-colors" />

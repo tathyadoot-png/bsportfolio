@@ -42,7 +42,7 @@ const Footer = ({ lang }: { lang: Lang }) => {
                 </h2>
                 <div className="flex items-center gap-2 mt-1">
                    <div className="w-6 h-[2px] bg-orange-500" />
-                   <span className="text-[10px] font-bold text-orange-500 uppercase leading-none tracking-tight">
+                   <span className="text-[10px] font-bold text-orange-500 uppercase leading-none ">
                       {isHi ? "जनसेवा ही संकल्प" : "Public Service First"}
                    </span>
                 </div>
@@ -55,7 +55,7 @@ const Footer = ({ lang }: { lang: Lang }) => {
               <Link
                 key={idx}
                 to={link.path}
-                className="text-xs font-bold text-white/50 hover:text-emerald-400 transition-colors uppercase leading-none tracking-tight"
+                className="text-xs font-bold text-white/50 hover:text-emerald-400 transition-colors uppercase leading-none "
               >
                 {link.label}
               </Link>
@@ -79,11 +79,11 @@ const Footer = ({ lang }: { lang: Lang }) => {
           <div className="absolute top-0 left-12 right-12 h-[1px] bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent" />
 
           <div className="flex items-center gap-6 py-2 md:py-0">
-            <span className="text-[10px] font-black text-white/20 uppercase tracking-tight">
+            <span className="text-[10px] font-black text-white/20 uppercase ">
               © {new Date().getFullYear()}
             </span>
             <div className="h-4 w-[1px] bg-white/10 hidden md:block" />
-            <p className="text-emerald-400 text-sm font-asar italic leading-none tracking-tight">
+            <p className="text-emerald-400 text-sm font-asar italic leading-none ">
               {isHi ? "प्रगतिशील विचार, सशक्त नेतृत्व" : "Progressive Vision, Strong Leadership"}
             </p>
           </div>
@@ -94,7 +94,7 @@ const Footer = ({ lang }: { lang: Lang }) => {
             rel="noopener noreferrer"
             className="w-full md:w-auto flex items-center justify-between md:justify-start gap-4 bg-black/40 hover:bg-black pl-6 pr-2 py-1.5 rounded-full border border-white/5 transition-all group"
           >
-            <span className="text-[10px] font-bold text-white/50 uppercase tracking-tight">
+            <span className="text-[10px] font-bold text-white/50 uppercase ">
               Digital Partner
             </span>
             <div className="flex items-center gap-3">
@@ -112,7 +112,7 @@ const Footer = ({ lang }: { lang: Lang }) => {
 
         {/* Legal Bottom (Very Tight) */}
         <div className="pb-8 border-t border-white/5 text-center pt-8">
-           <p className="text-[9px] font-bold text-white/10 uppercase tracking-widest leading-none">
+           <p className="text-[9px] font-bold text-white/10 uppercase  leading-none">
              India • Designed for Impact • Official Presence
            </p>
         </div>

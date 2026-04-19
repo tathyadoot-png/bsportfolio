@@ -70,7 +70,7 @@ const SammanSection = ({ lang, preview = false }: Props) => {
                 <button
                   key={cat}
                   onClick={() => { setActive(cat); setExpanded(false); }}
-                  className={`flex-1 px-3 py-2.5 rounded-xl text-[9px] font-black uppercase tracking-widest transition-all ${
+                  className={`flex-1 px-3 py-2.5 rounded-xl text-[9px] font-black uppercase   transition-all ${
                     active === cat ? "bg-[#112250] text-white shadow-md" : "text-slate-400 hover:bg-white hover:text-[#112250]"
                   }`}
                 >
@@ -99,7 +99,7 @@ const SammanSection = ({ lang, preview = false }: Props) => {
             </div>
 
             {preview && (
-              <Link to="/samman-seva" className="flex items-center justify-center gap-3 w-full py-5 bg-[#FF9933] text-white rounded-3xl font-black uppercase text-[10px] tracking-widest hover:bg-[#112250] transition-all shadow-lg shadow-orange-200">
+              <Link to="/samman-seva" className="flex items-center justify-center gap-3 w-full py-5 bg-[#FF9933] text-white rounded-3xl font-black uppercase text-[10px]   hover:bg-[#112250] transition-all shadow-lg shadow-orange-200">
                 {isHi ? "और विस्तार से देखें" : "Explore More"}
                 <ArrowRight size={16} />
               </Link>
@@ -152,7 +152,7 @@ const SammanSection = ({ lang, preview = false }: Props) => {
             {!preview && filteredImages.length > 5 && (
               <button 
                 onClick={() => setExpanded(!expanded)}
-                className="w-full mt-8 py-5 border-2 border-slate-100 text-[#112250] rounded-3xl flex items-center justify-center gap-3 hover:bg-[#112250] hover:text-white transition-all font-bold text-[10px] uppercase tracking-widest"
+                className="w-full mt-8 py-5 border-2 border-slate-100 text-[#112250] rounded-3xl flex items-center justify-center gap-3 hover:bg-[#112250] hover:text-white transition-all font-bold text-[10px] uppercase  "
               >
                 {expanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                 {expanded ? "Show Less" : `See ${filteredImages.length - 5} More`}
@@ -171,7 +171,7 @@ const SammanSection = ({ lang, preview = false }: Props) => {
               <img src={sliderData.images[sliderData.index]} className="max-h-[70vh] rounded-[2rem] shadow-2xl border-8 border-white object-contain" alt="Preview" />
               <button onClick={() => setSliderData({...sliderData, index: (sliderData.index + 1) % sliderData.images.length})} className="absolute right-0 p-4 bg-white shadow-xl rounded-full text-[#112250] z-50"><ChevronRight /></button>
             </div>
-            <button onClick={() => setSliderData(null)} className="mt-8 px-10 py-4 bg-[#112250] text-white rounded-full font-black text-[10px] tracking-widest flex items-center gap-2 transition-transform active:scale-95">
+            <button onClick={() => setSliderData(null)} className="mt-8 px-10 py-4 bg-[#112250] text-white rounded-full font-black text-[10px]   flex items-center gap-2 transition-transform active:scale-95">
               <X size={16} /> CLOSE GALLERY
             </button>
           </motion.div>

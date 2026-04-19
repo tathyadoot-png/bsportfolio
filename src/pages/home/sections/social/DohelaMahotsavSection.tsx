@@ -19,7 +19,7 @@ const DohelaMahotsavSection = ({ lang, preview = false }: Props) => {
       <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
 
         {/* Tag */}
-        <span className="text-xs font-black uppercase tracking-widest text-pink-600 bg-pink-50 px-4 py-1.5 rounded-full">
+        <span className="text-xs font-black uppercase   text-pink-600 bg-pink-50 px-4 py-1.5 rounded-full">
           {dohelaMahotsavData.tag}
         </span>
 
