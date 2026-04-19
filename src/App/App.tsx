@@ -26,6 +26,9 @@ import NotFound from "@/pages/NotFound";
 import DohelaMahotsavPage from "@/pages/social/DohelaMahotsavPage";
 import RudrakshDhamPage from "@/pages/social/RudrakshDhamPage";
 import SammanPage from "@/pages/social/SammanPage";
+import BandariGauravDiwas from "@/pages/social/BandariGauravDiwas";
+import BarodiyaGauravDiwas from "@/pages/social/BarodiyaGauravDiwas";
+import MalthonGauravDiwas from "@/pages/social/MalthonGauravDiwas";
 
 const App = () => {
   return (
@@ -56,6 +59,9 @@ const App = () => {
           <Route path="/dohela-mahotsav" element={<DohelaMahotsavPage />} />
           <Route path="/rudraksh-dham" element={<RudrakshDhamPage />} />
           <Route path="/samman-seva" element={<SammanPage />} />
+          <Route path="/bandari-gaurav-diwas" element={<BandariGauravDiwas />} />
+          <Route path="/barodiya-gaurav-diwas" element={<BarodiyaGauravDiwas />} />
+          <Route path="/malthon-gaurav-diwas" element={<MalthonGauravDiwas />} />
 
         </Route>
 

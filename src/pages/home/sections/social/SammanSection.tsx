@@ -42,8 +42,9 @@ const SammanSection = ({ lang, preview = false }: Props) => {
       
       {/* 🎯 HEADER - Compact and Clean */}
       <div className="max-w-[1400px] mx-auto px-6">
-        <div className="mb-12">
+        <div className="mb-12 pt-8">
             <SectionHeading 
+            
             title={sammanData.title[lang]} 
             subtitle={isHi ? "समाज सेवा की एक पहल" : "A Social Initiative"} 
             lang={lang}
@@ -53,8 +54,9 @@ const SammanSection = ({ lang, preview = false }: Props) => {
             <motion.p 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-center max-w-3xl mx-auto text-slate-500 font-asar text-lg md:text-xl mt-[-25px] italic leading-relaxed"
+            className="text-center max-w-3xl pt-7 text-justify mx-auto text-slate-500 font-asar text-lg md:text-xl mt-[-25px] italic leading-relaxed"
             >
+        
             {sammanData.description[lang]}
             </motion.p>
         </div>

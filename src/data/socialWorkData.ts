@@ -1,5 +1,13 @@
-import { HeartPulse, Users, HandHelping } from "lucide-react";
-
+import {
+  HeartPulse,
+  HeartHandshake,
+  PartyPopper,
+  Landmark,
+  Award,
+  Flag,
+  Home,
+  UsersRound
+} from "lucide-react";
 export const socialWorkData = [
   {
     key: "blood",
@@ -7,7 +15,7 @@ export const socialWorkData = [
       hi: "रक्तदान सेवा",
       en: "Blood Donation"
     },
-    desc: {
+    desc: { 
       hi: "रक्तदान शिविरों के माध्यम से जीवन बचाने की एक निरंतर पहल।",
       en: "A continuous initiative to save lives through organized blood donation camps."
     },
@@ -16,6 +24,7 @@ export const socialWorkData = [
     tag: "Life Saving",
     color: "from-red-500/20"
   },
+
   {
     key: "vivah",
     title: {
@@ -27,55 +36,106 @@ export const socialWorkData = [
       en: "Financial and social support for the marriage of daughters from needy families."
     },
     path: "/vivah",
-    icon: Users,
+    icon: HeartHandshake,
     tag: "Community",
     color: "from-orange-500/20"
   },
- 
-  {
-  key: "dohela",
-  title: {
-    hi: "डोहेला महोत्सव",
-    en: "Dohela Mahotsav"
-  },
-  desc: {
-    hi: "डोहेला महोत्सव एक सांस्कृतिक और धार्मिक आयोजन है, जिसमें क्षेत्रीय परंपराओं, भक्ति और लोक संस्कृति का भव्य प्रदर्शन किया जाता है।",
-    en: "Dohela Mahotsav is a cultural and religious festival showcasing regional traditions, devotion, and folk heritage."
-  },
-  path: "/dohela-mahotsav",
-  icon: Users, // 👉 change later if needed
-  tag: "Festival",
-  color: "from-pink-500/20"
-},
 
-{
-  key: "rudraksh",
+  {
+    key: "dohela",
+    title: {
+      hi: "डोहेला महोत्सव",
+      en: "Dohela Mahotsav"
+    },
+    desc: {
+      hi: "सांस्कृतिक और धार्मिक परंपराओं का भव्य उत्सव।",
+      en: "A grand celebration of cultural and religious traditions."
+    },
+    path: "/dohela-mahotsav",
+    icon: PartyPopper,
+    tag: "Festival",
+    color: "from-pink-500/20"
+  },
+
+  {
+    key: "rudraksh",
+    title: {
+      hi: "रुद्राक्ष धाम, सागर",
+      en: "Rudraksh Dham, Sagar"
+    },
+    desc: {
+      hi: "आध्यात्मिक शांति और पूजा-अर्चना का प्रमुख केंद्र।",
+      en: "A spiritual center for peace and religious devotion."
+    },
+    path: "/rudraksh-dham",
+    icon: Landmark,
+    tag: "Spiritual",
+    color: "from-indigo-500/20"
+  },
+
+  {
+    key: "samman",
   title: {
-    hi: "रुद्राक्ष धाम, सागर",
-    en: "Rudraksh Dham, Sagar"
-  },
-  desc: {
-    hi: "रुद्राक्ष धाम एक पवित्र धार्मिक स्थल है, जहाँ भक्तों के लिए आध्यात्मिक शांति और पूजा-अर्चना की व्यवस्था की गई है।",
-    en: "Rudraksh Dham is a sacred temple providing a peaceful spiritual environment for devotees and religious activities."
-  },
-  path: "/rudraksh-dham",
-  icon: HandHelping, // 👉 later you can replace with temple icon
-  tag: "Spiritual",
-  color: "from-indigo-500/20"
+  hi: "पहल - सम्मान जो समाज के काम आए",
+  en: "Initiative – Awards for Social Good"
 },
-{
-  key: "samman",
-  title: {
-    hi: "सम्मान जो समाज के काम आए",
-    en: "Awards for Social Good"
+    desc: {
+      hi: "प्राप्त सम्मान को समाजहित में उपयोग करने की पहल।",
+      en: "An initiative to utilize awards for social welfare."
+    },
+    path: "/samman-seva",
+    icon: Award,
+    tag: "Inspiration",
+    color: "from-yellow-500/20"
   },
-  desc: {
-    hi: "यह एक अनूठी पहल है, जिसमें प्राप्त सम्मान और पुरस्कारों को समाज के हित में उपयोग किया जाता है, ताकि जरूरतमंद लोगों की सहायता की जा सके।",
-    en: "A unique initiative where received awards and honors are utilized for social welfare, helping those in need."
+
+  // 🔥 NEW ADDED
+
+  {
+    key: "bandari",
+    title: {
+      hi: "बांदरी गौरव दिवस",
+      en: "Bandari Gaurav Diwas"
+    },
+    desc: {
+      hi: "क्षेत्रीय गौरव और सामाजिक एकता को समर्पित आयोजन।",
+      en: "An event dedicated to regional pride and community unity."
+    },
+    path: "/bandari-gaurav-diwas",
+    icon: Flag,
+    tag: "Pride",
+    color: "from-green-500/20"
   },
-  path: "/samman-seva",
-  icon: HandHelping, // 👉 later you can change to Award icon
-  tag: "Inspiration",
-  color: "from-yellow-500/20"
-}
+
+  {
+    key: "barodiya",
+    title: {
+      hi: "बरोदिया कलाँ गौरव दिवस",
+      en: "Barodiya Kala Gaurav Diwas"
+    },
+    desc: {
+      hi: "स्थानीय परंपराओं और गौरव को बढ़ावा देने वाला आयोजन।",
+      en: "An initiative promoting local traditions and pride."
+    },
+    path: "/barodiya-gaurav-diwas",
+    icon: Home,
+    tag: "Culture",
+    color: "from-blue-500/20"
+  },
+
+  { 
+    key: "malthon",
+    title: {
+      hi: "मालथौन गौरव दिवस",
+      en: "Malthon Gaurav Diwas"
+    },
+    desc: {
+      hi: "क्षेत्रीय पहचान और जनभागीदारी का उत्सव।",
+      en: "A celebration of regional identity and public participation."
+    },
+    path: "/malthon-gaurav-diwas",
+    icon: UsersRound,
+    tag: "Community",
+    color: "from-purple-500/20"
+  }
 ];

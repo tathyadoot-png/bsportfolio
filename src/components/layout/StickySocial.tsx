@@ -5,28 +5,28 @@ const StickySocial = () => {
   const socials = [
     { 
       icon: Facebook, 
-      href: "https://www.facebook.com/rajendrashuklamp", 
+      href: "https://www.facebook.com/bhuppendrasiingh", 
       color: "#1877F2", 
       bg: "bg-[#1877F2]/10", 
       border: "border-[#1877F2]/20" 
     },
     { 
       icon: Instagram, 
-      href: "https://www.instagram.com/rajendrashuklaofficial/", 
+      href: "https://www.instagram.com/bhuppendrasiingh", 
       color: "#E4405F", 
       bg: "bg-[#E4405F]/10", 
       border: "border-[#E4405F]/20" 
     },
     { 
       icon: Twitter, 
-      href: "https://x.com/rshuklabjp", 
+      href: "https://x.com/bhupendrasingho", 
       color: "#000000", 
       bg: "bg-black/5", 
       border: "border-black/10" 
     },
     { 
       icon: Youtube, 
-      href: "https://www.youtube.com/@rajendrashuklamp", 
+      href: "https://www.youtube.com/@bhuppendrasiingh", 
       color: "#FF0000", 
       bg: "bg-[#FF0000]/10", 
       border: "border-[#FF0000]/20" 

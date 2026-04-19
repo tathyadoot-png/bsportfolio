@@ -6,16 +6,16 @@ export const sammanData = {
 
   tag: "Inspiration",
 
-  description: {
-    hi: "यह एक अनूठी पहल है, जिसमें प्राप्त सम्मान और पुरस्कारों को समाज के हित में उपयोग किया जाता है, ताकि जरूरतमंद लोगों की सहायता की जा सके। यह प्रयास समाज में सेवा और समर्पण की भावना को मजबूत करता है।",
-    en: "A unique initiative where received awards and honors are utilized for social welfare, helping those in need. This effort strengthens the spirit of service and contribution in society."
-  },
+description: {
+  hi: "फूल-मालाओं के स्थान पर जनोपयोगी सामग्री को स्वागत स्वरूप देने की अपील की जाती है। यह एक अनूठी पहल है, जिसमें प्राप्त सम्मान और पुरस्कारों को समाज के हित में उपयोग किया जाता है, ताकि जरूरतमंद लोगों की सहायता की जा सके। यह प्रयास समाज में सेवा और समर्पण की भावना को मजबूत करता है।",
 
+  en: "People are encouraged to offer useful items instead of garlands as a gesture of welcome. This is a unique initiative where received awards and honors are utilized for social welfare, helping those in need. It strengthens the spirit of service and contribution in society."
+},
   highlights: [
-    {
+    { 
       title: {
         hi: "सम्मान का सदुपयोग",
-        en: "Meaningful Use of Awards"
+        en: "Meaningful Use of Awards" 
       },
       desc: {
         hi: "प्राप्त सम्मान को समाज सेवा और जरूरतमंदों की सहायता में उपयोग किया जाता है।",

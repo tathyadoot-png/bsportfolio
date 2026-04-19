@@ -105,11 +105,11 @@ const HomeAbout = () => {
 
             {/* QUOTE & BIO */}
             <div className="max-w-2xl space-y-10">
-              <p className="text-2xl md:text-4xl font-asar text-white/90 leading-tight italic border-l-4 border-emerald-500 pl-8">
+              <p className="text-2xl md:text-4xl text-justify font-asar text-white/90 leading-tight italic border-l-4 border-emerald-500 pl-8">
                  "{t.info}"
               </p>
 
-              <p className="text-lg md:text-xl text-white/50 font-asar leading-relaxed">
+              <p className="text-lg md:text-xl text-justify text-white/50 font-asar leading-relaxed">
                  {t.bio[0]}
               </p>
 

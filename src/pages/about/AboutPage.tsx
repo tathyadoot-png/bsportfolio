@@ -77,7 +77,7 @@ const AboutPage = () => {
           className="lg:w-2/3 p-10 md:p-20 rounded-[4rem] bg-white/5 backdrop-blur-2xl border border-white/10 shadow-2xl"
         >
           <Quote className="text-[#0c5e48] mb-10" size={60} />
-          <p className="text-3xl md:text-5xl font-asar text-orange-500 leading-tight">
+          <p className="text-3xl md:text-5xl text-justify font-asar text-orange-500 leading-tight">
             {t.info}
           </p>
         </motion.div>
@@ -115,7 +115,7 @@ const AboutPage = () => {
                 key={i}
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
-                className="p-10 rounded-[3rem] bg-white/5 backdrop-blur-sm border border-white/10 text-orange-500 text-xl font-asar leading-relaxed"
+                className="p-10 rounded-[3rem] bg-white/5 text-justify backdrop-blur-sm border border-white/10 text-orange-500 text-xl font-asar leading-relaxed"
               >
                 {para}
               </motion.div>
@@ -128,7 +128,7 @@ const AboutPage = () => {
       <div className="relative z-20 py-20 bg-[#305249] overflow-hidden rotate-[-2deg] scale-110">
         <div className="flex whitespace-nowrap gap-20 animate-marquee">
             {[...Array(5)].map((_, i) => (
-              <div key={i} className="flex items-center gap-20 text-white font-black text-6xl uppercase italic">
+              <div key={i} className="flex items-center md:gap-20 gap-5 text-white font-black md:text-6xl uppercase italic">
                 <span>Dharma</span>
                 <Sparkles />
                 <span>Leadership</span>
