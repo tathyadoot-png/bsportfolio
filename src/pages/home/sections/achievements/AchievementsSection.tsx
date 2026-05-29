@@ -21,7 +21,7 @@ const AchievementsSection = ({ lang, preview = false }: Props) => {
   });
 
   return (
-    <section ref={containerRef} className="relative w-full py-24 bg-[#f8fafc] overflow-hidden">
+    <section ref={containerRef} className="relative w-full  bg-[#f8fafc] overflow-hidden">
       
       {/* 🌀 Background Animated Blobs */}
       <motion.div 

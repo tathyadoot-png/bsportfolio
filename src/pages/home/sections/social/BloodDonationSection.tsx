@@ -226,3 +226,7 @@ const BloodDonationSection = ({ lang }: Props) => {
 };
 
 export default BloodDonationSection;
+
+
+
+

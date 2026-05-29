@@ -9,7 +9,7 @@ const BloodDonation = () => {
     <div className="pt-28">
       <BloodDonationSection lang={lang} />
     </div>
-  );
+  ); 
 };
 
 export default BloodDonation;
