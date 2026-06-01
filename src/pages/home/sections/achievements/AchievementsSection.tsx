@@ -56,8 +56,8 @@ const AchievementsSection = ({ lang, preview = false }: Props) => {
                 className={`relative flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 lg:gap-24`}
               >
                 {/* 1. LARGE BACKGROUND YEAR (The Anchor) */}
-                <div className={`absolute ${isEven ? '-left-10' : '-right-10'} top-[-40%] md:top-[-60%] pointer-events-none opacity-[0.04]`}>
-                  <h4 className="text-[15rem] md:text-[25rem] font-black text-[#112250] leading-none select-none">
+                <div className={`absolute ${isEven ? '-left-10' : '-right-10'} top-[-40%] md:top-[-50%] pointer-events-none opacity-[0.04]`}>
+                  <h4 className="text-[10rem] md:text-[10rem] font-black text-[#112250] leading-none select-none">
                     {item.year}
                   </h4>
                 </div>
@@ -65,7 +65,7 @@ const AchievementsSection = ({ lang, preview = false }: Props) => {
                 {/* 2. MAIN CARD (Glassmorphism) */}
                 <div className="relative z-10 w-full md:w-1/2 group">
                   <div className="relative p-1 bg-gradient-to-br from-emerald-500/20 to-orange-500/20 rounded-[3rem] overflow-hidden shadow-2xl">
-                    <div className="bg-white/90 backdrop-blur-xl rounded-[2.9rem] p-10 md:p-14 transition-all duration-700 group-hover:bg-white">
+                    <div className="bg-white/90 backdrop-blur-xl rounded-[2.9rem] p-4 md:p-7 transition-all duration-700 group-hover:bg-white">
                       
                       <div className="flex items-center gap-4 mb-6">
                         <div className="w-12 h-12 rounded-full bg-[#112250] text-white flex items-center justify-center shadow-lg group-hover:bg-orange-500 transition-colors">
@@ -74,7 +74,7 @@ const AchievementsSection = ({ lang, preview = false }: Props) => {
                         <span className="text-[10px] font-black  text-emerald-600 uppercase">Honor Roll</span>
                       </div>
 
-                      <h3 className="text-2xl md:text-4xl font-asar font-bold text-[#112250] leading-[1.4] mb-8">
+                      <h3 className="text-xl md:text-2xl font-asar font-bold text-[#112250] leading-[1.4] mb-8">
                         {item.text}
                       </h3>
 
