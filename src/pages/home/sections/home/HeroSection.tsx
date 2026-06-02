@@ -91,7 +91,7 @@ const HeroSection = ({ lang }: Props) => {
                 {isHi ? "माननीय विधायक" : "Honorable MLA"}
               </span>
               <h1 className="font-gotu text-5xl sm:text-7xl md:text-8xl lg:text-[5rem] xl:text-[6.5rem] leading-[0.95] text-slate-900 tracking-tighter">
-                <div className="text-[#0c5240] pb-3 font-gotu block opacity-90  pr-1">
+                <div className="text-[#0c5240] py-3 font-gotu block opacity-90  pr-1">
                   {isHi ? "भूपेन्द्र" : "Bhupendra"}
                 </div>
                 <span className=" font-gotu text-[#0c5240] block pl-24">
