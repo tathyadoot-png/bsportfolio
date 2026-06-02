@@ -24,7 +24,7 @@ const AboutPage = () => {
   // Luxury Spatial Parallax Calculation Module
   const godScale = useTransform(smoothProgress, [0, 1], [1, 1.25]);
   const godY = useTransform(smoothProgress, [0, 1], [-20, 80]);
-  const godOpacity = useTransform(smoothProgress, [0, 0.3, 0.8, 1], [0.03, 0.07, 0.07, 0.02]);
+  const godOpacity = useTransform(smoothProgress, [0, 0.3, 0.8, 1], [0.04, 0.09, 0.09, 0.02]);
 
   // Blurred Backdrop Watermark Driving Coordinates
   const wordLeftX = useTransform(smoothProgress, [0, 1], [-50, 50]);
@@ -45,19 +45,19 @@ const AboutPage = () => {
       onMouseMove={handleMouseMove}
       className="relative w-full bg-[#fafaf9] overflow-hidden min-h-[180vh] font-poppins selection:bg-orange-500 selection:text-white"
     >
-      {/* ⚡ RADIAL LIGHT SOURCE RUNNING CANVAS */}
+      {/* ⚡ RADIAL EMERALD LIGHT SOURCE */}
       <div 
         className="absolute inset-0 pointer-events-none z-0 opacity-40 transition-opacity duration-500 hidden lg:block"
         style={{
-          background: `radial-gradient(800px circle at ${mousePos.x}px ${mousePos.y}px, rgba(249,115,22,0.04), transparent 80%)`
+          background: `radial-gradient(800px circle at ${mousePos.x}px ${mousePos.y}px, rgba(12,94,72,0.05), transparent 80%)`
         }}
       />
 
-      {/* 🏛️ GIANT BLURRED POLITICAL TYPOGRAPHY WATERMARKS */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none opacity-[0.05] mix-blend-darken">
+      {/* 🏛️ GIANT BLURRED TYPOGRAPHY WATERMARKS */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none opacity-[0.06] mix-blend-darken">
         <motion.h3 
           style={{ x: wordLeftX }}
-          className="absolute left-4 top-[18%] text-[8rem] md:text-[14rem] font-black tracking-widest text-slate-900 font-gotu filter blur-[3px]"
+          className="absolute left-4 top-[18%] text-[8rem] md:text-[14rem] font-black tracking-widest text-[#0c5e48] font-gotu filter blur-[3px]"
         >
           {lang === "hi" ? "नेतृत्व" : "LEADERSHIP"}
         </motion.h3>
@@ -81,10 +81,10 @@ const AboutPage = () => {
         </div>
       </div>
 
-      {/* LUXURY BACKGROUND COLOR BLURS */}
+      {/* LUXURY GREEN & ORANGE BLUR GRADIENTS */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 right-0 w-[55%] h-[55%] bg-gradient-to-bl from-orange-500/[0.03] to-transparent blur-[140px]" />
-        <div className="absolute bottom-1/4 left-0 w-[45%] h-[45%] bg-slate-200/50 blur-[120px]" />
+        <div className="absolute bottom-1/4 left-0 w-[45%] h-[45%] bg-gradient-to-tr from-[#0c5e48]/[0.04] to-transparent blur-[120px]" />
       </div>
 
       {/* 1. THE FIXED DIVINE BACKGROUND LAYER */}
@@ -95,7 +95,7 @@ const AboutPage = () => {
         <img 
           src={godShadow} 
           alt="Divine Silhouette Aura" 
-          className="w-[85%] md:w-[55%] lg:w-[35%] h-auto object-contain grayscale" 
+          className="w-[85%] md:w-[55%] lg:w-[35%] h-auto object-contain grayscale brightness-95" 
         />
       </motion.div>
 
@@ -108,16 +108,16 @@ const AboutPage = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="space-y-4 max-w-5xl"
         >
-          {/* Tech Context Badge */}
-          <div className="mx-auto flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 text-slate-600 w-fit shadow-sm rounded-[1px] mb-6">
-             <Compass size={12} className="text-orange-600 animate-[spin_12s_linear_infinite]" />
+          {/* Emerald Context Badge */}
+          <div className="mx-auto flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 text-[#0c5e48] w-fit shadow-sm rounded-[1px] mb-6">
+             <Compass size={12} className="text-[#0c5e48] animate-[spin_12s_linear_infinite]" />
              <span className="text-[9px] font-black uppercase tracking-[0.25em] text-slate-500">Executive Identity Node</span>
           </div>
 
           <h2 className="font-gotu text-6xl sm:text-8xl md:text-[7rem] lg:text-[8.5rem] xl:text-[9.5rem] leading-[0.9] tracking-tighter text-slate-900">
-            <div className="block font-light text-slate-950 opacity-95 pt-4">{t.nameFirst}</div>
-            <div className="block text-orange-600 font-medium mt-4 relative pl-8 inline-block ps-36">
-               <span className="absolute left-0 top-1/2 -translate-y-1/2 w-6 md:w-12 h-[1.5px] bg-orange-600 " />
+            <div className="block font-light text-orange-500 uppercase pb-1 md:py-4">{t.nameFirst}</div>
+            <div className="block text-[#0c5e48] font-black italic mt-4 relative pl-12 md:pl-20 inline-block">
+               <span className="absolute left-0 top-1/2 -translate-y-1/2 w-6 md:w-12 h-[2px] bg-[#0c5e48] " />
                {t.nameLast}
             </div>
           </h2>
@@ -130,7 +130,7 @@ const AboutPage = () => {
            className="absolute bottom-12 left-1/2 -translate-x-1/2 text-slate-400 flex flex-col items-center gap-2 cursor-default select-none z-20"
         >
             <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-slate-400">Scroll to Explore</span>
-            <MoveDown size={18} className="text-orange-500" />
+            <MoveDown size={18} className="text-[#0c5e48]" />
         </motion.div>
       </div>
 
@@ -145,11 +145,11 @@ const AboutPage = () => {
           transition={{ duration: 0.6 }}
           className="lg:w-11/12 p-8 sm:p-14 md:p-20 bg-white border border-slate-200/80 shadow-2xl relative"
         >
-          <Quote className="text-orange-500/20 absolute top-8 left-8" size={70} strokeWidth={1} />
-          <p className="text-xl sm:text-2xl md:text-4xl text-left font-asar text-slate-800 leading-relaxed italic border-l-2 border-orange-500 pl-6 sm:pl-10 relative z-10">
+          <Quote className="text-[#0c5e48]/10 absolute top-8 left-8" size={70} strokeWidth={1} />
+          <p className="text-xl sm:text-2xl md:text-4xl text-left font-asar text-orange-500 leading-relaxed italic border-l-2 border-[#0c5e48] pl-6 sm:pl-10 relative z-10">
             "{t.info}"
           </p>
-          <div className="absolute right-6 bottom-6 w-16 h-16 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:8px_8px] opacity-60" />
+          <div className="absolute right-6 bottom-6 w-16 h-16 bg-[radial-gradient(#0c5e48_1px,transparent_1px)] [background-size:8px_8px] opacity-15" />
         </motion.div>
 
         {/* Image & Stats Overlap Module */}
@@ -160,15 +160,15 @@ const AboutPage = () => {
             {/* Geometric Framing lines */}
             <div className="absolute top-[-16px] left-[-16px] right-[16px] bottom-[16px] border border-slate-200/90 pointer-events-none hidden sm:block z-0" />
             <div className="absolute top-[-16px] left-[-16px] w-4 h-4 border-t-2 border-l-2 border-orange-500 hidden sm:block z-10" />
-            <div className="absolute bottom-[-16px] right-[16px] w-4 h-4 border-b-2 border-r-2 border-slate-400 hidden sm:block z-10" />
+            <div className="absolute bottom-[-16px] right-[16px] w-4 h-4 border-b-2 border-r-2 border-[#0c5e48] hidden sm:block z-10" />
 
             <div className="absolute -left-6 top-1/4 bg-white border border-slate-200 px-3 py-1.5 shadow-sm hidden xl:flex items-center gap-2 z-20">
-              <Scale size={11} className="text-orange-500" />
+              <Scale size={11} className="text-[#0c5e48]" />
               <span className="text-[8px] font-bold uppercase tracking-widest text-slate-500">Governance</span>
             </div>
             
             <div className="absolute -right-6 top-2/3 bg-white border border-slate-200 px-3 py-1.5 shadow-sm hidden xl:flex items-center gap-2 z-20">
-              <Landmark size={11} className="text-slate-600" />
+              <Landmark size={11} className="text-orange-500" />
               <span className="text-[8px] font-bold uppercase tracking-widest text-slate-500">Public Trust</span>
             </div>
 
@@ -190,10 +190,10 @@ const AboutPage = () => {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="space-y-2 border-l-4 border-orange-500 pl-6 py-2"
+              className="space-y-2 border-l-4 border-[#0c5e48] pl-6 py-2"
             >
               <div className="flex items-center gap-3">
-                <span className="text-slate-900 font-bold text-5xl md:text-6xl tracking-tight font-poppins">{t.experience}</span>
+                <span className="text-[#0c5e48] font-black text-5xl md:text-6xl tracking-tight font-poppins">{t.experience}</span>
                 <Activity size={20} className="text-orange-500 animate-pulse mt-2" />
               </div>
               <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">
@@ -206,13 +206,13 @@ const AboutPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="p-6 bg-slate-950 text-white flex items-center gap-6 shadow-xl relative overflow-hidden group"
+              className="p-6 bg-[#0c5e48] text-white flex items-center gap-6 shadow-xl relative overflow-hidden group"
             >
-              <div className="p-3 bg-white/10 text-orange-500 relative z-10">
+              <div className="p-3 bg-white/10 text-orange-400 relative z-10">
                  <ShieldCheck size={28} />
               </div>
               <div className="relative z-10">
-                <p className="text-[9px] font-bold uppercase tracking-widest opacity-60">Affiliation & Authority</p>
+                <p className="text-[9px] font-bold uppercase tracking-widest opacity-75">Affiliation & Authority</p>
                 <p className="text-xl md:text-2xl font-medium tracking-tight mt-0.5">{t.party}</p>
               </div>
               <div className="absolute inset-0 w-1/2 h-full bg-white/5 transform -skew-x-12 -translate-x-full group-hover:animate-shimmer pointer-events-none" />
@@ -229,28 +229,28 @@ const AboutPage = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-8 sm:p-12 bg-white text-left border border-slate-200 shadow-lg text-slate-600 text-sm md:text-base font-normal leading-relaxed relative"
+                className="p-8 sm:p-12 bg-white text-justify border border-slate-200 shadow-lg text-slate-700 text-sm md:text-base font-normal leading-relaxed relative"
               >
                 {para}
-                <div className="absolute top-0 left-0 w-8 h-[2px] bg-orange-500" />
-                <div className="absolute top-0 left-0 w-[2px] h-8 bg-orange-500" />
+                <div className="absolute top-0 left-0 w-8 h-[2px] bg-[#0c5e48]" />
+                <div className="absolute top-0 left-0 w-[2px] h-8 bg-[#0c5e48]" />
               </motion.div>
             ))}
         </div>
 
       </div>
 
-      {/* 4. PREMIUM SYSTEM SLICK MARQUEE */}
-      <div className="relative z-20 py-12 bg-slate-950 overflow-hidden rotate-[-1.5deg] scale-105 border-y border-orange-500/30 shadow-2xl mt-12">
+      {/* 4. PREMIUM EMERALD MARQUEE STRIP */}
+      <div className="relative z-20 py-12 bg-[#0c5e48] overflow-hidden rotate-[-1.5deg] scale-105 border-y border-orange-500/30 shadow-2xl mt-12">
         <div className="flex whitespace-nowrap gap-16 animate-[marquee_25s_linear_infinite]">
             {[...Array(4)].map((_, i) => (
               <div key={i} className="flex items-center gap-16 text-white font-light text-3xl md:text-4xl uppercase tracking-[0.15em]">
-                <span className="text-slate-100 font-normal">{lang === "hi" ? "धर्म" : "Dharma"}</span>
-                <Sparkles size={16} className="text-orange-500" />
-                <span className="text-orange-500 font-medium">{lang === "hi" ? "नेतृत्व" : "Leadership"}</span>
-                <Sparkles size={16} className="text-orange-500" />
-                <span className="text-slate-300 font-light">{lang === "hi" ? "कर्म" : "Karma"}</span>
-                <Sparkles size={16} className="text-orange-500" />
+                <span className="text-white font-normal">{lang === "hi" ? "धर्म" : "Dharma"}</span>
+                <Sparkles size={16} className="text-orange-400" />
+                <span className="text-orange-400 font-medium">{lang === "hi" ? "नेतृत्व" : "Leadership"}</span>
+                <Sparkles size={16} className="text-orange-400" />
+                <span className="text-slate-200 font-light">{lang === "hi" ? "कर्म" : "Karma"}</span>
+                <Sparkles size={16} className="text-orange-400" />
               </div>
             ))}
         </div>

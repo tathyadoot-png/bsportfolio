@@ -54,7 +54,7 @@ const Navbar = ({ lang, setLang }: NavbarProps) => {
   const springConfig = { type: "spring", stiffness: 400, damping: 30 };
 
   return (
-    <nav className="fixed top-0 z-[100] w-full px-4 md:px-10 py-4 md:py-6">
+    <nav className="fixed top-0 z-[100] w-full px-4 md:px-10 ">
       <motion.div
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

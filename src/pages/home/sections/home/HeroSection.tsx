@@ -8,6 +8,7 @@ import slid1 from "@/assets/slid1.jpeg";
 import slid2 from "@/assets/slid2.jpeg";
 import slid3 from "@/assets/slid3.jpeg";
 import slid4 from "@/assets/slid4.jpeg";
+import AchievementsSection from "../home/AchievementsSection";
 
 interface Props {
   lang: "hi" | "en";
@@ -62,7 +63,7 @@ const HeroSection = ({ lang }: Props) => {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen w-full overflow-hidden bg-[#fafaf9] text-slate-900 flex flex-col justify-between pt-24 lg:pt-0 font-poppins"
+      className="relative  w-full overflow-hidden bg-[#fafaf9] text-slate-900 flex flex-col justify-between pt-24 lg:pt-36 font-poppins"
     >
       {/* Editorial Structural Gridline Accents */}
       <div className="absolute inset-0 grid grid-cols-12 pointer-events-none z-0 opacity-40">
@@ -168,47 +169,23 @@ const HeroSection = ({ lang }: Props) => {
 
       </div>
 
-      {/* REDESIGNED BOTTOM NODE: Ultra-Premium Luxury KPI Strip */}
-      <div className="relative z-20 w-full bg-white border-t border-slate-200/60 py-8 lg:py-12 font-poppins">
-        <div className="w-full max-w-[1650px] mx-auto px-4 sm:px-8 lg:px-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 md:gap-x-0 md:divide-x md:divide-slate-200/50">
-            {[
-              { icon: <Calendar size={15} />, val: "45+", label: "Years Exp.", desc: isHi ? "सक्रिय सार्वजनिक सेवा वर्ष" : "Active Public Service" },
-              { icon: <Zap size={15} />, val: "5+", label: "MLA Terms", desc: isHi ? "लगातार निर्वाचित विधानसभा" : "Legislative Assemblies" },
-              { icon: <Building size={15} />, val: "100+", label: "Projects", desc: isHi ? "पूर्ण वृहत बुनियादी ढांचे" : "Completed Infrastructure" },
-              { icon: <Award size={15} />, val: "1200+", label: "Villages", desc: isHi ? "सशक्त और जुड़े ग्रामीण क्षेत्र" : "Connected Communities" },
-            ].map((stat, i) => (
-              <div 
-                key={i} 
-                className="hero-stagger-node group flex flex-col justify-between pl-0 md:pl-8 lg:pl-12 first:pl-0 transition-all duration-300 relative"
-              >
-                {/* Minimal Micro-Layout Header */}
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-slate-400 group-hover:text-orange-600 transition-colors duration-300">
-                    {stat.icon}
-                  </span>
-                  <span className="text-[10px] uppercase tracking-[0.15em] font-bold text-slate-400 group-hover:text-slate-900 transition-colors duration-300">
-                    {stat.label}
-                  </span>
-                </div>
-                
-                {/* Main Minimal Value & Text Row */}
-                <div className="flex items-baseline gap-3 md:gap-4 flex-wrap sm:flex-nowrap">
-                  <div className="text-3xl sm:text-4xl lg:text-[2.75rem] font-medium tracking-tight text-slate-950 font-poppins transition-transform duration-300 group-hover:translate-x-1">
-                    {stat.val}
-                  </div>
-                  <div className="text-[11px] text-slate-500 font-normal leading-normal pr-4 line-clamp-1 group-hover:text-slate-800 transition-colors duration-300">
-                    {stat.desc}
-                  </div>
-                </div>
+{/* REDESIGNED CONTAINER: Premium Poppins Numbers & Brand Colored Marquee */}
+<div className="w-full bg-[#fafaf9] border-t border-b border-slate-200/60  font-sans selection:bg-orange-600 selection:text-white pt-20">
+  
+  {/* Forwarding the language prop fixes TS(2741) */}
+  <AchievementsSection lang={lang} />
 
-                {/* Apple-style thin interaction slide line */}
-                <div className="absolute bottom-[-8px] lg:bottom-[-12px] left-0 md:left-8 lg:left-12 first:left-0 right-0 h-[1.5px] bg-orange-500 scale-x-0 transition-transform duration-500 origin-left group-hover:scale-x-75 pointer-events-none" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+  {/* Independent Brand-Colored Dynamic Marquee Banner */}
+  <div className="relative w-full bg-gradient-to-r from-orange-50/30 to-emerald-50/20 border-t border-slate-200/50 py-3 sm:py-4 lg:py-5 overflow-hidden flex items-center">
+    <div className="whitespace-nowrap flex gap-12 text-[2rem] sm:text-[5.5rem] lg:text-[6.5rem] font-black uppercase tracking-tighter animate-marquee-slow pointer-events-none select-none font-poppins">
+      <span className="text-primary/40">SERVICE • INTEGRITY • LEADERSHIP • DEVELOPMENT • </span>
+      <span className="text-secondary/40">SERVICE • INTEGRITY • LEADERSHIP • DEVELOPMENT • </span>
+      <span className="text-primary/40">SERVICE • INTEGRITY • LEADERSHIP • DEVELOPMENT • </span>
+      <span className="text-secondary/40">SERVICE • INTEGRITY • LEADERSHIP • DEVELOPMENT • </span>
+    </div>
+  </div>
+
+</div>
     </section>
   );
 };

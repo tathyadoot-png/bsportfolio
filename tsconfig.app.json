@@ -9,17 +9,21 @@
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
     "isolatedModules": true,
-    "moduleDetection": "force",
+    "ignoreDeprecations": "5.0",
     "noEmit": true,
     "jsx": "react-jsx",
+    
+    /* 🛠️ SILENCE DEPRECATION ERRORS & ADD NODE TYPES */
+    "ignoreDeprecations": "5.0",
+    "types": ["node"],
 
     /* Linting */
-    "strict": false,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noImplicitAny": false,
-    "noFallthroughCasesInSwitch": false,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
 
     "baseUrl": ".",
     "paths": {

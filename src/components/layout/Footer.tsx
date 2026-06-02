@@ -8,9 +8,10 @@ const Footer = ({ lang }: { lang: Lang }) => {
   const isHi = lang === "hi";
   const name = profileData[lang].fullName;
 
+
   const navLinks = [
     { label: isHi ? "होम" : "Home", path: "/" },
-    { label: isHi ? "পরিচয়" : "About", path: "/about" },
+    { label: isHi ? "परिचय" : "About", path: "/about" },
     { label: isHi ? "यात्रा" : "Journey", path: "/journey" },
     { label: isHi ? "कार्य" : "Work", path: "/government-work" },
     { label: isHi ? "योगदान" : "Impact", path: "/contributions" },

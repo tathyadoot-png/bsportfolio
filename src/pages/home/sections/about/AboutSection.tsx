@@ -114,8 +114,7 @@ const HomeAbout = () => {
               title={t.heading} 
               subtitle={t.subtitle} 
               lang={lang} 
-              titleColor="text-slate-900"     
-              subtitleColor="text-orange-600" 
+            
            />
         </div>
 
@@ -194,7 +193,7 @@ const HomeAbout = () => {
 
             {/* SPLIT TYPOGRAPHY BLOCK FOR NAME */}
             <div className="space-y-2 relative overflow-hidden py-1">
-               <h2 className="font-gotu text-5xl sm:text-7xl md:text-8xl lg:text-[5rem] xl:text-[6rem] text-slate-900 leading-[0.95] tracking-tighter">
+               <h2 className="font-gotu text-5xl sm:text-7xl pt-5 md:text-8xl lg:text-[5rem] xl:text-[6rem] text-slate-900 leading-[0.95] tracking-tighter">
                  <motion.span 
                    initial={{ y: "100%" }}
                    whileInView={{ y: 0 }}
@@ -210,7 +209,7 @@ const HomeAbout = () => {
                    whileInView={{ y: 0, opacity: 1 }}
                    viewport={{ once: true }}
                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.05 }}
-                   className="block text-orange-600 font-medium pl-14 lg:pl-24 mt-3 relative"
+                   className="block text-orange-600 font-medium pl-14 lg:pl-20 mt-3 relative"
                  >
                    {/* Layout Connector Accent Line */}
                    <motion.span 

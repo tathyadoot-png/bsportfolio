@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
-
+/* eslint-disable @typescript-eslint/no-require-imports */
+declare var require: any;
 const config: Config = {
   darkMode: ["class"],
   content: [
@@ -16,6 +17,16 @@ const config: Config = {
       screens: { "2xl": "1400px" },
     },
     extend: {
+      // 🏃‍♂️ SAFELY ADDED THE MARQUEE ANIMATION RUNNER KEYS
+      animation: {
+        'marquee-slow': 'marquee 25s linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        }
+      },
       colors: {
         primary: {
           DEFAULT: "#E46B2E", // Saffron
