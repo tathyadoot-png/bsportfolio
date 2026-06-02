@@ -63,7 +63,7 @@ const HeroSection = ({ lang }: Props) => {
   return (
     <section
       ref={containerRef}
-      className="relative  w-full overflow-hidden bg-[#fafaf9] text-slate-900 flex flex-col justify-between pt-24 lg:pt-36 font-poppins"
+      className="relative  w-full overflow-hidden bg-[#fafaf9] text-slate-900 flex flex-col justify-between pt-24 lg:pt-28 font-poppins"
     >
       {/* Editorial Structural Gridline Accents */}
       <div className="absolute inset-0 grid grid-cols-12 pointer-events-none z-0 opacity-40">
